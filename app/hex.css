@@ -1,0 +1,115 @@
+.small img {
+  width: 100px;
+  height: 100px;
+  margin: 40px; }
+
+.container {
+  width: 1024px;
+  line-height: 1.0;
+  overflow: hidden;
+  padding-left: 0px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.hexGrid {
+  position: absolute;
+  top: 0px;
+  width: inherit; }
+
+.visible {
+  display: visible; }
+
+.invisible {
+  display: hidden;
+  height: 0px; }
+
+.logoHex {
+  top: 189.1072px; }
+
+.logoHex {
+  pointer-events: all;
+  position: absolute;
+  left: 50%;
+  transform: translate(-49%, 0);
+  height: 141.65333px;
+  width: 240.81067px;
+  border-radius: 7.08267px;
+  display: inline-block;
+  z-index: 1;
+  transition: all 100ms ease-in-out; }
+
+.logoHex:before, .logoHex:after {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background: inherit;
+  content: ''; }
+
+.logoHex:before {
+  transform: rotate(60deg); }
+
+.logoHex:after {
+  position: absolute;
+  transform: rotate(-60deg);
+  left: 0;
+  top: 0; }
+
+.logoHex img {
+  width: 240.81067px;
+  position: relative;
+  top: -67.81277px;
+  pointer-events: none; }
+
+ol {
+  pointer-events: none;
+  -webkit-margin-before: 0px;
+  -webkit-padding-start: 16.9984px;
+  -webkit-margin-after: 0px; }
+
+ol.even {
+  position: relative;
+  left: 40.34287px; }
+
+ol.odd {
+  position: relative;
+  left: 0px;
+  margin-top: -34.73474px;
+  margin-bottom: -34.73474px; }
+
+ol {
+  white-space: nowrap; }
+
+.hex {
+  pointer-events: all;
+  position: relative;
+  margin: 14.58196px;
+  width: 42.496px;
+  height: 72.2432px;
+  border-radius: 1.69984px;
+  background: #fff;
+  transform: rotate(-90deg);
+  display: inline-block;
+  margin-right: 36.82987px;
+  margin-left: 0px;
+  transition: all 100ms ease-in-out; }
+
+.hex:before, .hex:after {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background: inherit;
+  content: ''; }
+
+.hex:before {
+  transform: rotate(60deg); }
+
+.hex:after {
+  transform: rotate(-60deg); }
+
+.hex:hover {
+  background: #F8baba;
+  cursor: pointer; }
+
+/*# sourceMappingURL=hex.css.map */

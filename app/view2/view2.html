@@ -3,3 +3,15 @@
   Showing of 'interpolate' filter:
   {{ 'Current version is v%VERSION%.' | interpolate }}
 </p>
+<div ng-mouseover="source = 'img/HexLogo.png'" ng-mouseout="source = 'img/HexLogoSketch.png'" ng-init="source='img/HexLogoSketch.png'">
+  Increment (when mouse is over)
+</div>
+count: {{source}}
+
+    <div class="inner">
+        <img src="{{source}}" alt="image 1">
+    </div>
+    <ul class="small">
+        <li> <img src="img/HexLogoSketch.png" alt="image 2"> </li>
+        <li> <img src="img/HexLogo.png" alt="image 2"> </li>
+    </ul>
