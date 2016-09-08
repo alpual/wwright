@@ -6,12 +6,15 @@
 			{
 				"row": 0,
 				"column": 0,
-				"color": "#996666"
+				"color": "#ccc",
+				"img": "",
+				"imgHover": "img/SmallHexLogo.png"
 			},
 			{
 				"row": 0,
 				"column": 1,
-				"color": "#666666"
+				"color": "#666666",
+				"imgHover": "img/pencilHex2.png"
 			},
 			{
 				"row": 0,

@@ -1,17 +1,55 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
-<div ng-mouseover="source = 'img/HexLogo.png'" ng-mouseout="source = 'img/HexLogoSketch.png'" ng-init="source='img/HexLogoSketch.png'">
-  Increment (when mouse is over)
-</div>
-count: {{source}}
+<header id="top-bar" class="clearfix">
+  <nav>
+    <a href="view1.html">Home</a>
+    <a href="view2.html">About</a>
+    <a href="view3.html">Works</a>
+    <a href="view4.html">Contact</a>
+  </nav>
+  <img id="logo" src="img/logo-small.png"></img>
+</header> <!-- END: top-bar -->
+<section id="about-content">
+  <h2>My name is</h2>
+  <h1>Paul Wright</h1>
+  <p>I'm a designer, developer </br>
+     artist and musician.</p>
+  <p>I'm a digital nomad.</p>
+</section>
+<section id="hex-float" class="clearfix">
+  <a class='hex medium northHex' ng-mouseover="northSource = 'img/LargeHexAboutHover7.png'" ng-mouseout="northSource = 'img/LargeHexAbout.png'" ng-init="northSource='img/LargeHexAbout.png'">
+    <img src='{{northSource}}' ></img>
+  </a>
+  <a class='hex medium westHex' href="#view2" ng-mouseover="westSource = 'img/LargeHexAboutHover7.png'" ng-mouseout="westSource = 'img/LargeHexAbout.png'" ng-init="westSource='img/LargeHexAbout.png'">
+    <img src='{{westSource}}' ></img>
+  </a>
+  <a class='hex medium eastHex' ng-mouseover="eastSource = 'img/LargeHexWorksHover.png'" ng-mouseout="eastSource = 'img/LargeHexWorks.png'" ng-init="eastSource='img/LargeHexWorks.png'">
+    <img src='{{eastSource}}' ></img>
+  </a>
 
-    <div class="inner">
-        <img src="{{source}}" alt="image 1">
-    </div>
-    <ul class="small">
-        <li> <img src="img/HexLogoSketch.png" alt="image 2"> </li>
-        <li> <img src="img/HexLogo.png" alt="image 2"> </li>
-    </ul>
+</section>
+<section id="logical-content" class="side-content left-side">
+  <h1>Logical</h1>
+  <p>
+    Education: BS in Computer Science - University of Arizona 
+  </p>
+  <p class="skills">  
+    Skills: Responsive design, HTML5, SCSS and CSS3, javaScript, jQuery, angular.js, custom WordPress themes, Java, Unix, Linux. 
+  </p> 
+    I build well coded, smartly designed programs.  When I build a website or app, I care about what goes on behind the scenes.  I want my code to work and I want it to last.  
+  </p>
+  <p>
+    I've been coding since I was in middle school.  In tenth grade I was the nerd who built a robot while on vacation in a remote mountain cabin buried in snow.  More recently I taught four years of high school math, physics and robotics.  I've been working as a freelance web developer since 2009. 
+  </p>
+</section>
+<section id="creative-content" class="side-content right-side">
+  <h1>Creative</h1>
+  <p>Education: BA in Art - University of Arizona</p>
+  <p>
+    I love making things with my hands, from pen-and pencil drawings to origami nautilus-shell lamps<alpual-ref><span class="refnum">[1]</span><span class="refbody refcenter"><img src="img/nautilusLamp.png" height="360px"></img></span></alpual-ref>.  I try to bring creative, artistic solutions to design projects.  I have found that design is as much a language as C++ or Spanish.
+  </p>
+  <p>
+    I still do much of my web-design layout and wireframing with a pencil and paper, and I even use a wacom tablet and stylus to work in Photoshop and Illustrator because I find the pencil-like stylus to be quick, intuitive and freeing. 
+  </p>
+    I enjoy the challenge of bringing a creative vision to life, whether it is my own, my clients', or a combination of both.  I specialize in building clean, attractive mobile-ready sites for small businesses and artists.
+  </p>
+</section>
+<div class="clearfix"></div>

@@ -1,16 +1,35 @@
-<div class="container">
+<div ng-controller="preloadController" ng-switch="isLoading">
+  <!-- BEGIN: Loading View. -->
+  <p ng-switch-when="true">
+    Your images are being loaded... {{ percentLoaded }}%
+  </p>
+  <!-- END: Loading View. -->
 
-  <div class="hexGrid">
-    <div ng-repeat="row in hexRow">
-      <ol class="{{row.rowClass}}">
-        <li class='hex' ng-repeat="x in row.hexes" ng-init="bkColor = '#eef'" ng-mouseover="bkColor = x.color" ng-mouseout="bkColor = '#fff'" style="background: {{bkColor}}"></li>
-      </ol>
-    </div>  
-  </div>
-
- 
-
-  <div class='logoHex' ng-mouseover="source = 'img/HexLogo.png'" ng-mouseout="source = 'img/HexLogoSketch.png'" ng-init="source='img/HexLogoSketch.png'">
-    <img src='{{source}}'></img>
-  </div>
-</div>
+  <!-- BEGIN: Results View. -->
+  <div class="container" ng-switch-when="false">
+    <!-- BEGIN: Background hexGrid -->
+    <div class="hexGrid">
+      <div ng-repeat="row in hexRow">
+        <ol class="{{row.rowClass}}">
+          <grid-hex ng-repeat="x in row.hexes"></grid-hex>
+        </ol>
+      </div>  
+    </div>
+    <!-- END: Background hexGrid -->
+   
+    <!-- BEGIN: Large Hex Menu -->
+    <a class='hex large northHex' ng-mouseover="northSource = 'img/LargeHexLogoHover.png'" ng-mouseout="northSource = 'img/LargeHexLogo.png'" ng-init="northSource='img/LargeHexLogo.png'">
+      <img src='{{northSource}}'></img>
+    </a>
+    <a class='hex large westHex' href="#view2" ng-mouseover="westSource = 'img/LargeHexAboutHover7.png'" ng-mouseout="westSource = 'img/LargeHexAbout.png'" ng-init="westSource='img/LargeHexAbout.png'">
+      <img src='{{westSource}}'></img>
+    </a>
+    <a class='hex large eastHex' ng-mouseover="eastSource = 'img/LargeHexWorksHover.png'" ng-mouseout="eastSource = 'img/LargeHexWorks.png'" ng-init="eastSource='img/LargeHexWorks.png'">
+      <img src='{{eastSource}}'></img>
+    </a>
+    <a class='hex large southHex' ng-mouseover="southSource = 'img/LargeHexContactHover2.png'" ng-mouseout="southSource = 'img/LargeHexContact.png'" ng-init="southSource='img/LargeHexContact.png'">
+      <img src='{{southSource}}'></img>
+    </a>
+    <!-- END: Large Hex Menu -->
+  </div> <!-- END: container - Results View -->
+</div> <!-- END: ng-switch isLoading -->

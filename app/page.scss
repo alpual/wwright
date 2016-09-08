@@ -1,0 +1,52 @@
+html, body {
+	height: 100%;
+}
+html, body, .view-container, header, section, div{
+	vertical-align: top;
+	display:block;
+}
+body{
+	overflow:auto;
+}
+header, section {
+	clear: both;
+}
+.view-container{
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	position: absolute;
+}
+.clear {
+	clear:both;
+}
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+/******************** Header **************/
+#top-bar {
+	/*background-color: #333;
+	opacity: .6;*/
+	width: 100%;
+	position:absolute;
+	z-index: 1;
+	#logo {
+		max-height: 2.5em;
+		margin: .5em;
+		float: left;
+		margin-left: 1.25em;
+	}
+}
+
+nav {
+	float: right;
+	margin: 1em;
+	a {
+		padding: .75em;
+		color: #666699;
+	}
+}

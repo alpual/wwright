@@ -1,0 +1,44 @@
+/* line 1, view2.scss */
+#about-content {
+  text-align: center;
+  width: 300px;
+  margin: 80px auto 40px auto;
+}
+/* line 5, view2.scss */
+#about-content h1, #about-content h2 {
+  margin: 0;
+  padding: 0;
+}
+/* line 9, view2.scss */
+#about-content p {
+  margin: 4px 0 0 0;
+}
+
+/* line 13, view2.scss */
+#hex-float {
+  height: 300px;
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+/* line 21, view2.scss */
+.side-content {
+  width: 30%;
+  display: inline-block;
+  padding: 40px;
+}
+
+/* line 26, view2.scss */
+.left-side {
+  /*float: left;
+  clear: both;*/
+}
+
+/* line 30, view2.scss */
+.right-side {
+  margin-left: 300px;
+  /*float: right;
+  clear: both;*/
+}

@@ -1,115 +1,351 @@
-.small img {
-  width: 100px;
-  height: 100px;
-  margin: 40px; }
+/* line 2, ref.scss */
+.hidden {
+  display: none;
+}
 
-.container {
-  width: 1024px;
-  line-height: 1.0;
-  overflow: hidden;
-  padding-left: 0px;
-  margin-left: auto;
-  margin-right: auto; }
+/* line 6, ref.scss */
+.ref {
+  position: relative;
+  vertical-align: baseline;
+}
 
-.hexGrid {
+/* line 11, ref.scss */
+.refnum {
+  position: relative;
+  left: 2px;
+  bottom: 1ex;
+  font-family: Verdana, sans-serif;
+  color: #005994;
+  font-size: .7em;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* line 23, ref.scss */
+.refbody {
+  font-family: Verdana, sans-serif;
+  font-size: .7em;
+  line-height: 1.1;
+  display: block;
+  min-width: 20em;
   position: absolute;
-  top: 0px;
-  width: inherit; }
+  left: 25px;
+  bottom: 5px;
+  border: 1px solid;
+  padding: 5px;
+  background-color: #fff;
+  word-wrap: break-word;
+  z-index: 9999;
+  overflow: auto;
+}
 
-.visible {
-  display: visible; }
-
-.invisible {
-  display: hidden;
-  height: 0px; }
-
-.logoHex {
-  top: 189.1072px; }
-
-.logoHex {
-  pointer-events: all;
-  position: absolute;
+/* line 40, ref.scss */
+.refcenter {
+  position: fixed;
+  display: table;
+  top: 50%;
   left: 50%;
-  transform: translate(-49%, 0);
-  height: 141.65333px;
-  width: 240.81067px;
-  border-radius: 7.08267px;
-  display: inline-block;
-  z-index: 1;
-  transition: all 100ms ease-in-out; }
+  transform: translate(-50%, -50%);
+}
 
-.logoHex:before, .logoHex:after {
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  border-radius: inherit;
-  background: inherit;
-  content: ''; }
+/* line 1, view2.scss */
+#about-content {
+  text-align: center;
+  width: 300px;
+  margin: 80px auto 40px auto;
+}
+/* line 5, view2.scss */
+#about-content h1, #about-content h2 {
+  margin: 0;
+  padding: 0;
+}
+/* line 9, view2.scss */
+#about-content p {
+  margin: 4px 0 0 0;
+}
 
-.logoHex:before {
-  transform: rotate(60deg); }
-
-.logoHex:after {
-  position: absolute;
-  transform: rotate(-60deg);
+/* line 13, view2.scss */
+#hex-float {
+  height: 300px;
+  position: relative;
+  top: 0;
+  right: 0;
   left: 0;
-  top: 0; }
+}
 
-.logoHex img {
-  width: 240.81067px;
-  position: relative;
-  top: -67.81277px;
-  pointer-events: none; }
+/* line 21, view2.scss */
+.side-content {
+  width: 30%;
+  display: inline-block;
+  padding: 40px;
+}
 
-ol {
-  pointer-events: none;
-  -webkit-margin-before: 0px;
-  -webkit-padding-start: 16.9984px;
-  -webkit-margin-after: 0px; }
+/* line 26, view2.scss */
+.left-side {
+  /*float: left;
+  clear: both;*/
+}
 
-ol.even {
-  position: relative;
-  left: 40.34287px; }
+/* line 30, view2.scss */
+.right-side {
+  margin-left: 300px;
+  /*float: right;
+  clear: both;*/
+}
 
-ol.odd {
-  position: relative;
-  left: 0px;
-  margin-top: -34.73474px;
-  margin-bottom: -34.73474px; }
+/* line 1, page.scss */
+html, body {
+  height: 100%;
+}
 
-ol {
-  white-space: nowrap; }
+/* line 4, page.scss */
+html, body, .view-container, header, section, div {
+  vertical-align: top;
+  display: block;
+}
 
+/* line 8, page.scss */
+body {
+  overflow: auto;
+}
+
+/* line 11, page.scss */
+header, section {
+  clear: both;
+}
+
+/* line 14, page.scss */
+.view-container {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  position: absolute;
+}
+
+/* line 20, page.scss */
+.clear {
+  clear: both;
+}
+
+/* line 23, page.scss */
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+/******************** Header **************/
+/* line 31, page.scss */
+#top-bar {
+  /*background-color: #333;
+  opacity: .6;*/
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+/* line 37, page.scss */
+#top-bar #logo {
+  max-height: 2.5em;
+  margin: .5em;
+  float: left;
+  margin-left: 1.25em;
+}
+
+/* line 45, page.scss */
+nav {
+  float: right;
+  margin: 1em;
+}
+/* line 48, page.scss */
+nav a {
+  padding: .75em;
+  color: #666699;
+}
+
+/*($container-width / 13) * (6 / 10.2) * (14/15); //41px;*/
+/*$small-hex-margin: ($hex-size * (1.732)) / (1.732 * 2) + ($hex-gutter);*/
+/*1 * ($hex-size / 2 * 1.732) + ($hex-gutter / 4 * 1.732) - 1px;*/
+/* line 39, hex.scss */
 .hex {
   pointer-events: all;
-  position: relative;
-  margin: 14.58196px;
-  width: 42.496px;
-  height: 72.2432px;
-  border-radius: 1.69984px;
-  background: #fff;
-  transform: rotate(-90deg);
+  -webkit-transition: background-image 100ms ease-in-out;
+  -moz-transition: background-image 100ms ease-in-out;
+  transition: background-image 100ms ease-in-out;
   display: inline-block;
-  margin-right: 36.82987px;
-  margin-left: 0px;
-  transition: all 100ms ease-in-out; }
-
+}
+/* line 44, hex.scss */
 .hex:before, .hex:after {
   position: absolute;
   width: inherit;
   height: inherit;
   border-radius: inherit;
   background: inherit;
-  content: ''; }
-
+  content: '';
+}
+/* line 52, hex.scss */
 .hex:before {
-  transform: rotate(60deg); }
-
+  transform: rotate(60deg);
+}
+/* line 55, hex.scss */
 .hex:after {
-  transform: rotate(-60deg); }
-
-.hex:hover {
+  transform: rotate(-60deg);
+  left: 0;
+  top: 0;
+}
+/* line 62, hex.scss */
+.hex.small {
+  height: 41.76864px;
+  width: 72.34329px;
+  border-radius: 2.08843px;
+  position: relative;
+  background: #fff;
+  margin: 0;
+  margin-right: 6.96144px;
+  margin-left: 0px;
+  z-index: 0;
+}
+/* line 71, hex.scss */
+.hex.small:hover {
   background: #F8baba;
-  cursor: pointer; }
+  cursor: pointer;
+}
+/* line 76, hex.scss */
+.hex.small div {
+  width: 72.34329px;
+  height: 200%;
+  position: relative;
+  top: -19.99563px;
+  pointer-events: none;
+  z-index: 1;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-transition: background-image 500ms ease-in-out;
+  -moz-transition: background-image 500ms ease-in-out;
+  transition: background-image 500ms ease-in-out;
+}
+/* line 90, hex.scss */
+.hex.large {
+  height: 133.32523px;
+  width: 230.9193px;
+  border-radius: 6.66626px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50.2%, 0);
+  z-index: 1;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+/* line 98, hex.scss */
+.hex.large img {
+  width: 230.9193px;
+  position: relative;
+  top: -63.82591px;
+  pointer-events: none;
+}
+/* line 105, hex.scss */
+.hex.large.northHex {
+  top: 177.10352px;
+}
+/* line 108, hex.scss */
+.hex.large.southHex {
+  top: 583.07921px;
+}
+/* line 111, hex.scss */
+.hex.large.eastHex {
+  top: 380.09137px;
+  transform: translate(1%, 0);
+}
+/* line 115, hex.scss */
+.hex.large.westHex {
+  top: 380.09137px;
+  transform: translate(-101.3%, 0);
+}
+/* line 121, hex.scss */
+.hex.medium {
+  height: 111.10436px;
+  width: 192.43275px;
+  border-radius: 5.55522px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1;
+}
+/* line 128, hex.scss */
+.hex.medium img {
+  width: 192.43275px;
+}
+/* line 133, hex.scss */
+.hex.medium.southHex {
+  top: 8.03861px;
+  transform: translate(1%, 150%);
+}
+/* line 137, hex.scss */
+.hex.medium.eastHex {
+  top: 4.01931px;
+  transform: translate(1%, 150%);
+}
+/* line 141, hex.scss */
+.hex.medium.westHex {
+  top: 4.01931px;
+  transform: translate(-101.3%, 150%);
+}
 
-/*# sourceMappingURL=hex.css.map */
+/* line 149, hex.scss */
+.container {
+  width: 1024px;
+  line-height: 1.0;
+  overflow: hidden;
+  padding-left: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 158, hex.scss */
+.hexGrid {
+  position: absolute;
+  top: 0px;
+  width: inherit;
+  background: #FFFFFF;
+  padding-top: 22.89397px;
+}
+
+/* line 166, hex.scss */
+.visible {
+  display: visible;
+}
+
+/* line 170, hex.scss */
+.invisible {
+  display: hidden;
+  height: 0px;
+}
+
+/* line 175, hex.scss */
+ol {
+  pointer-events: none;
+  -webkit-margin-before: 0px;
+  -webkit-padding-start: 0px;
+  -webkit-margin-after: 0px;
+}
+
+/* line 182, hex.scss */
+ol.even {
+  position: relative;
+  left: 39.65236px;
+}
+
+/* line 187, hex.scss */
+ol.odd {
+  position: relative;
+  left: 0px;
+  margin-top: 22.89397px;
+  margin-bottom: 22.89397px;
+}
+
+/* line 194, hex.scss */
+ol {
+  white-space: nowrap;
+}

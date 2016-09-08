@@ -1,14 +1,151 @@
+@import 'ref';
+@import 'view2';
+@import 'page';
+
 $container-width: 1024px;
-$hex-size: $container-width * 41.5 / 1000;//($container-width / 13) * (6 / 10.2) * (14/15); //41px;
+$hex-size: $container-width / (24.516);/*($container-width / 13) * (6 / 10.2) * (14/15); //41px;*/
 $hex-gutter: $hex-size / 6;
-$large-hex-size: $hex-size * 3 + 2 * $hex-gutter;
+$gutter-height: $hex-gutter / 1.732;
+/*$small-hex-margin: ($hex-size * (1.732)) / (1.732 * 2) + ($hex-gutter);*/
+$row-margin: ($hex-size + $gutter-height ) / 2; /*1 * ($hex-size / 2 * 1.732) + ($hex-gutter / 4 * 1.732) - 1px;*/
+$large-hex-size: 2 * $hex-size + 2 * $row-margin + 4;
+$medium-hex-size: $large-hex-size / (1.2);
 $container-left: 0px;
 
-.small img {
-  width:100px;
-  height:100px;
-  margin:40px;
+@function getWidth($h){
+  @return $h * (1.732);
 }
+
+@mixin setDimensions($h){
+  height: $h;
+  width: getWidth($h);
+  border-radius: $h * (1/20);
+}
+
+@function yPos($yHex){
+  @return $yHex * ($hex-size + $row-margin + 3) +$hex-size / 2 + $row-margin - 2;
+}
+
+@function rowFloatOffset($hexSize, $row){
+  @return ($hexSize / 1.732) * ($row - 1);
+}
+
+@mixin setTransitions($ms){
+  -webkit-transition: background-image $ms ease-in-out;
+  -moz-transition: background-image $ms ease-in-out;
+  transition: background-image $ms ease-in-out;
+}
+
+.hex {
+  pointer-events: all;
+  @include setTransitions(100ms);
+  display: inline-block;
+
+  &:before, &:after{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background: inherit;
+    content: '';
+  }
+  &:before {
+    transform: rotate(60deg);
+  }
+  &:after {
+    transform: rotate(-60deg);
+    left: 0;
+    top: 0;
+  }
+
+
+  &.small{
+    @include setDimensions($hex-size);
+    position: relative;
+    background: #fff;
+    margin: 0;//$small-hex-margin;
+    margin-right: $hex-gutter; 
+    margin-left: 0px;
+    z-index: 0;
+
+    &:hover{
+      background: #F8baba;
+      cursor: pointer;
+    }
+
+    div {
+      width: getWidth($hex-size);
+      height: 200%;
+      position: relative;
+      top: $hex-size * (-90 / 188);
+      pointer-events: none;
+      z-index: 1;
+      border:none;
+      background-repeat: no-repeat;
+      background-size: 100% 100%; 
+      @include setTransitions(500ms);
+    }
+  } // small
+  
+  &.large {
+    @include setDimensions($large-hex-size);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50.2%, 0);
+    z-index: 1;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+    img {
+      width: getWidth($large-hex-size);
+      position: relative;
+      top: $large-hex-size * (-90 / 188);
+      pointer-events: none;
+    }
+
+    &.northHex{
+      top: yPos(2); //put the top point in the second row 
+    }
+    &.southHex{
+      top: yPos(8);
+    }
+    &.eastHex{
+      top: yPos(5);
+      transform: translate(1%, 0);
+    }
+    &.westHex{
+      top: yPos(5);
+      transform: translate(-101.3%, 0);
+    }
+  } // large
+
+  &.medium {
+    @include setDimensions($medium-hex-size);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1; 
+
+    img {
+      width: getWidth($medium-hex-size);
+    }
+    &.northHex{
+    }
+    &.southHex{
+      top: ( $hex-gutter / 1.732 ) * 2;
+      transform: translate(1%, 150%);
+    }
+    &.eastHex{
+      top: $hex-gutter / 1.732;
+      transform: translate(1%, 150%);
+    }
+    &.westHex{
+      top: $hex-gutter / 1.732;
+      transform: translate(-101.3%, 150%);
+    }
+  } // medium
+}
+
+
 .container {
   width: $container-width;
   line-height: 1.0;
@@ -22,6 +159,8 @@ $container-left: 0px;
   position: absolute;
   top: 0px;
   width: inherit;
+  background: #FFFFFF;
+  padding-top: $row-margin;
 }
 
 .visible {
@@ -33,61 +172,10 @@ $container-left: 0px;
   height: 0px;
 }
 
-.logoHex {
-  //left:(1000) / 2 - ($large-hex-size  * (10.2 / 6)) / 2 + $container-left + $hex-gutter/2 - 1.5; 
-  //background-image:url("img/HexLogoSketch.jpg");
-  //background-size: 300px;
-  //background-position: center;
-  top: 3 * $hex-size + 1.7 * $hex-gutter + $large-hex-size * (2.1/6);
-}
-
-.logoHex {
-  pointer-events: all;
-  position: absolute;
-  //margin: $large-hex-size / (1.732 * 2) + $hex-gutter 0px;
-  left: 50%;
-  transform: translate(-49%, 0);
-  height: $large-hex-size;
-  width: $large-hex-size * (10.2 / 6);
-  border-radius: $large-hex-size * (1/20);
-  //background: #afa;
-  //transform: rotate(-90deg);
-  display: inline-block;
-  //margin-right: $large-hex-size * (.732) + $hex-gutter;
-  //margin-left: $hex-gutter;
-  z-index: 1;
-  transition: all 100ms ease-in-out;
-}
-.logoHex:before, .logoHex:after {
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  border-radius: inherit;
-  background: inherit;
-  content: '';
-}
-.logoHex:before {
-  transform: rotate(60deg);
-}
-
-.logoHex:after {
-  position:absolute;
-  transform: rotate(-60deg);
-  left: 0;
-  top: 0;
-}
-
-.logoHex img {
-  width: $large-hex-size * (10.2 / 6);
-  position: relative;
-  top: $large-hex-size * (-90 / 188);
-  pointer-events: none;
-}
-
 ol {
   pointer-events:none;
   -webkit-margin-before: 0px;
-  -webkit-padding-start: 16 / 40 * $hex-size; //+ 2 * $hex-gutter;
+  -webkit-padding-start: 0px; //16 / 40 * $hex-size; //+ 2 * $hex-gutter;
   -webkit-margin-after: 0px;
 }
 
@@ -99,47 +187,10 @@ ol.even {
 ol.odd {
   position: relative;
   left: 0px;
-  margin-top: -1 * ($hex-size / 2 * 1.732) + ($hex-gutter / 4 * 1.732) - 1px;
-  margin-bottom: -1 * ($hex-size / 2 * 1.732) + ($hex-gutter / 4 * 1.732) - 1px;
+  margin-top: $row-margin;
+  margin-bottom: $row-margin;
 }
 
 ol {
   white-space: nowrap;
-}
-
-.hex {
-  pointer-events: all;
-  position: relative;
-  margin: $hex-size / (1.7 * 2) + ($hex-gutter) / (1.7 * 2);
-  width: $hex-size;
-  height: $hex-size * (10.2 / 6);
-  border-radius: $hex-size * (1/25);
-  background: #fff; //#748798;
-  transform: rotate(-90deg);
-  display: inline-block;
-  margin-right: $hex-size * .7 + $hex-gutter; //$hex-size * (.732) + $hex-gutter;
-  margin-left: 0px;//$hex-gutter;
-  transition: all 100ms ease-in-out;
-}
-
-.hex:before, .hex:after {
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  border-radius: inherit;
-  background: inherit;
-  content: '';
-}
-
-.hex:before {
-  transform: rotate(60deg);
-}
-
-.hex:after {
-  transform: rotate(-60deg);
-}
-
-.hex:hover {
-  background: #F8baba;
-  cursor: pointer;
 }

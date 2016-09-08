@@ -1,0 +1,49 @@
+Functioning logo and background hexes loaded from json file.  Commit
+working code befoe refactoring code into a directive.
+
+author: Paul Wright
+
+# Please enter the commit message for your changes. Lines starting with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   app/app.js
+#	new file:   app/hex.css
+#	new file:   app/hex.css.map
+#	new file:   app/hex.scss
+#	new file:   app/img/Compost Instructions.psd
+#	new file:   app/img/HexLogo.jpg
+#	new file:   app/img/HexLogo.png
+#	new file:   app/img/HexLogoSketch.jpg
+#	new file:   app/img/HexLogoSketch.png
+#	new file:   app/img/HexLogoSketchTransparent.png
+#	new file:   app/img/hex.jpg
+#	new file:   app/img/pizzacat.html
+#	new file:   app/img/pizzacat_files/analytics.js
+#	new file:   app/img/pizzacat_files/base-libs-9df48064aa94735b7ffac5ab3048f491.js
+#	new file:   app/img/pizzacat_files/console_runner-ba402f0a8d1d2ce5a72889b81a71a979.js
+#	new file:   app/img/pizzacat_files/css
+#	new file:   app/img/pizzacat_files/css_live_reload_init-bad5f8d322020126e7b4287d497c7efe.js
+#	new file:   app/img/pizzacat_files/editor-79deccdfe76d219f899cde8aeb0aa5fc.css
+#	new file:   app/img/pizzacat_files/events_runner-902c66a0175801ad4cdf661b3208a97b.js
+#	new file:   app/img/pizzacat_files/everypage-ae09556f85329bd489d22a2bed9267d9.js
+#	new file:   app/img/pizzacat_files/global-NoMQ-4f2707168bb6b07febfdf3f7b9bb7277.css
+#	new file:   app/img/pizzacat_files/index-47497af0b175cd4a723b3c8d5717267d.js
+#	new file:   app/img/pizzacat_files/index.html
+#	new file:   app/img/pizzacat_files/jquery.min.js
+#	new file:   app/img/pizzacat_files/libs-759f19b394e9c66f245b9f3e8793b97d.js
+#	new file:   app/img/pizzacat_files/prefixfree.min.js
+#	new file:   app/img/pizzacat_files/stopExecutionOnTimeout.js
+#	new file:   app/img/pizzacat_files/twilight-99e417babc5d66f1712806b592469cf2.css
+#	modified:   app/index.html
+#	new file:   app/js/controllers.js
+#	new file:   app/js/hex.js
+#	new file:   app/json/hexGrid.json
+#	modified:   app/view1/view1.html
+#	modified:   app/view1/view1.js
+#	modified:   app/view2/view2.html
+#
+# Untracked files:
+#	app/.sass-cache/
+#
