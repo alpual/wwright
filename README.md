@@ -1,6 +1,8 @@
 # Based on angular-seed — the seed for AngularJS apps
 
-Currently being developed
+contact: Paul Wright
+email: alpual@gmail.com
+
 
 WWright
 -------
