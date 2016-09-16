@@ -172,6 +172,10 @@ $container-left: 0px;
   display: hidden;
   height: 0px;
 }
+.visiblyhidden{
+  opacity: 0;
+  transition: all 300ms linear;
+}
 
 ol {
   pointer-events:none;

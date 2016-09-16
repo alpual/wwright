@@ -496,7 +496,13 @@ header, section {
   height: 0px;
 }
 
-/* line 176, hex.scss */
+/* line 175, hex.scss */
+.visiblyhidden {
+  opacity: 0;
+  transition: all 300ms linear;
+}
+
+/* line 180, hex.scss */
 ol {
   pointer-events: none;
   -webkit-margin-before: 0px;
@@ -504,13 +510,13 @@ ol {
   -webkit-margin-after: 0px;
 }
 
-/* line 183, hex.scss */
+/* line 187, hex.scss */
 ol.even {
   position: relative;
   left: 39.65236px;
 }
 
-/* line 188, hex.scss */
+/* line 192, hex.scss */
 ol.odd {
   position: relative;
   left: 0px;
@@ -518,7 +524,7 @@ ol.odd {
   margin-bottom: 22.89397px;
 }
 
-/* line 195, hex.scss */
+/* line 199, hex.scss */
 ol {
   white-space: nowrap;
 }
