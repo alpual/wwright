@@ -28,16 +28,20 @@
   <p>I'm a digital nomad.</p>
 </section>
 <section id="hex-float" class="clearfix" ng-controller="tilehexCtrl">
-  <a tilehex  cardinality="north" hex-size="medium" default-src="img/LargeHexAbout.png" hover-src="img/LargeHexAboutHover7.png">
-    <img src="img/largeHexAboutHover7.png"></img>
-  </a tilehex>
+  <a tilehex cardinality="north" hex-size="medium" hover-src="img/LargeHexAboutHover7.png">
+    <img src="img/largeHexAbout.png"></img>
+    <img src="img/LargeHexLogoHover.png"></img>
+  </a>
   
-  <a class='hex medium westHex' href="#view2" ng-mouseover="westSource = 'img/LargeHexAboutHover7.png'" ng-mouseout="westSource = 'img/LargeHexAbout.png'" ng-init="westSource='img/LargeHexAbout.png'">
-    <img src='{{westSource}}' ></img>
+  <a tilehex cardinality="west" hex-size="medium" hover-src="img/LargeHexAboutHover7.png">
+    <img src="img/largeHexAbout.png"></img>
   </a>
-  <a class='hex medium eastHex' ng-mouseover="eastSource = 'img/LargeHexWorksHover.png'" ng-mouseout="eastSource = 'img/LargeHexWorks.png'" ng-init="eastSource='img/LargeHexWorks.png'">
-    <img src='{{eastSource}}' ></img>
+
+  <a tilehex cardinality="east" hex-size="medium" hover-src="img/LargeHexWorksHover.png">
+    <img src="img/largeHexWorks.png"></img>
   </a>
+
+
 
 </section>
 <section id="lower-container" class="below-the-fold clearfix">

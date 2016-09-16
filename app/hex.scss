@@ -132,16 +132,16 @@ $container-left: 0px;
       top: ( $medium-hex-size / 2);
     }
     &.southHex{
-      top: (( $hex-gutter / 1.732 ) * 2 )+ ( $medium-hex-size / 2);
-      transform: translate(1%, 150%);
+      top: (( $hex-gutter / 1.732 ) * 2)+ ( $medium-hex-size / 2);
+      transform: translate(-50%, 300%);
     }
     &.eastHex{
       top: ( $hex-gutter / 1.732 ) + ( $medium-hex-size / 2);
-      transform: translate(1%, 150%);
+      transform: translate(-101.3%, 150%);
     }
     &.westHex{
       top: ( $hex-gutter / 1.732 ) + ( $medium-hex-size / 2);
-      transform: translate(-101.3%, 150%);
+      transform: translate(1%, 150%);
     }
   } // medium
 }

@@ -453,17 +453,17 @@ header, section {
 /* line 134, hex.scss */
 .hex.medium.southHex {
   top: 63.59079px;
-  transform: translate(1%, 150%);
+  transform: translate(-50%, 300%);
 }
 /* line 138, hex.scss */
 .hex.medium.eastHex {
   top: 59.57149px;
-  transform: translate(1%, 150%);
+  transform: translate(-101.3%, 150%);
 }
 /* line 142, hex.scss */
 .hex.medium.westHex {
   top: 59.57149px;
-  transform: translate(-101.3%, 150%);
+  transform: translate(1%, 150%);
 }
 
 /* line 150, hex.scss */

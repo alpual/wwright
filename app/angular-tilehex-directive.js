@@ -44,21 +44,11 @@
 
                     var param = {};
 
-                    /*param.side = $scope.psSide || 'right';
-                    param.speed = $scope.psSpeed || '0.5';
-                    param.size = $scope.psSize || '300px';
-                    param.zindex = $scope.psZindex || 1000;
-                    param.className = $scope.psClass || 'ng-pageslide';
-                    param.push = $scope.psPush === 'true';
-                    param.container = $scope.psContainer || false;
-                    param.keyListener = $scope.psKeyListener === 'true';
-                    param.bodyClass = $scope.psBodyClass || false;
-                    param.clickOutside = $scope.psClickOutside !== 'false';*/
                     param.hexSize = $scope.hexSize || 'medium';
                     param.cardinality = $scope.cardinality || 'false';
-                    param.defaultSrc = $scope.defaultSrc || 'false';
+                    param.defaultSrc = $scope.defaultSrc || 'false'; // if we want an alternate image when off hover
                     param.hoverSrc = $scope.hoverSrc || 'false';
-                    param.className = $scope.psClass || 'tilehex';
+                    param.className = $scope.hexClass || 'tilehex';
                     
                     el.addClass(param.className);
                     el.addClass('hex');
@@ -69,9 +59,34 @@
 
                     if(param.cardinality) {
 
-                        el.addClass(param.cardinality + "Hex");
+                        el.addClass(param.cardinality + "Hex"); // class northHex, eastHex etc...
                     }
+                    if (param.hoverSrc != 'false'){
+                        param.theSrc = el[0].children[0].src;
+                        console.log(param.theSrc)
+                        el.bind('mouseover', function(){
+                            el[0].children[0].src = param.hoverSrc;
+                        });
 
+                        if (param.defaultSrc != 'false') {
+                            el.bind('mouseout', function(){
+                                el[0].children[0].src = param.defaultSrc;       
+                            });
+                        } else{
+                            el.bind('mouseout', function(){
+                                el[0].children[0].src = param.theSrc;       
+                            });
+                        }
+                    }
+                    if (el[0].children.length > 1)
+                    {
+                        var theChildren = el[0].children;
+                        for(var i = 1; i < theChildren.length; i++) {
+                            var theChild = theChildren[i];
+                            theChild.className = "hidden";
+
+                        }                            
+                    }
                     /*var content, slider, body;
 
                     if (param.container) {
