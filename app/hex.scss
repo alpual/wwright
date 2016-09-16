@@ -124,19 +124,23 @@ $container-left: 0px;
 
     img {
       width: getWidth($medium-hex-size);
+      position: relative;
+      top: -1 * ( $medium-hex-size / 2);
+      pointer-events: none;
     }
     &.northHex{
+      top: ( $medium-hex-size / 2);
     }
     &.southHex{
-      top: ( $hex-gutter / 1.732 ) * 2;
+      top: (( $hex-gutter / 1.732 ) * 2 )+ ( $medium-hex-size / 2);
       transform: translate(1%, 150%);
     }
     &.eastHex{
-      top: $hex-gutter / 1.732;
+      top: ( $hex-gutter / 1.732 ) + ( $medium-hex-size / 2);
       transform: translate(1%, 150%);
     }
     &.westHex{
-      top: $hex-gutter / 1.732;
+      top: ( $hex-gutter / 1.732 ) + ( $medium-hex-size / 2);
       transform: translate(-101.3%, 150%);
     }
   } // medium

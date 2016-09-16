@@ -442,24 +442,31 @@ header, section {
 /* line 125, hex.scss */
 .hex.medium img {
   width: 192.43275px;
+  position: relative;
+  top: -55.55218px;
+  pointer-events: none;
 }
-/* line 130, hex.scss */
-.hex.medium.southHex {
-  top: 8.03861px;
-  transform: translate(1%, 150%);
+/* line 131, hex.scss */
+.hex.medium.northHex {
+  top: 55.55218px;
 }
 /* line 134, hex.scss */
-.hex.medium.eastHex {
-  top: 4.01931px;
+.hex.medium.southHex {
+  top: 63.59079px;
   transform: translate(1%, 150%);
 }
 /* line 138, hex.scss */
+.hex.medium.eastHex {
+  top: 59.57149px;
+  transform: translate(1%, 150%);
+}
+/* line 142, hex.scss */
 .hex.medium.westHex {
-  top: 4.01931px;
+  top: 59.57149px;
   transform: translate(-101.3%, 150%);
 }
 
-/* line 146, hex.scss */
+/* line 150, hex.scss */
 .container {
   width: 1024px;
   line-height: 1.0;
@@ -469,7 +476,7 @@ header, section {
   margin-right: auto;
 }
 
-/* line 155, hex.scss */
+/* line 159, hex.scss */
 .hexGrid {
   position: absolute;
   top: 0px;
@@ -478,18 +485,18 @@ header, section {
   padding-top: 22.89397px;
 }
 
-/* line 163, hex.scss */
+/* line 167, hex.scss */
 .visible {
   display: visible;
 }
 
-/* line 167, hex.scss */
+/* line 171, hex.scss */
 .invisible {
   display: hidden;
   height: 0px;
 }
 
-/* line 172, hex.scss */
+/* line 176, hex.scss */
 ol {
   pointer-events: none;
   -webkit-margin-before: 0px;
@@ -497,13 +504,13 @@ ol {
   -webkit-margin-after: 0px;
 }
 
-/* line 179, hex.scss */
+/* line 183, hex.scss */
 ol.even {
   position: relative;
   left: 39.65236px;
 }
 
-/* line 184, hex.scss */
+/* line 188, hex.scss */
 ol.odd {
   position: relative;
   left: 0px;
@@ -511,7 +518,7 @@ ol.odd {
   margin-bottom: 22.89397px;
 }
 
-/* line 191, hex.scss */
+/* line 195, hex.scss */
 ol {
   white-space: nowrap;
 }
