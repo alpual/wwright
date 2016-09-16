@@ -1,20 +1,20 @@
-/* line 1, view2.scss */
+/* line 3, view2.scss */
 #about-content {
   text-align: center;
   width: 300px;
   margin: 80px auto 40px auto;
 }
-/* line 5, view2.scss */
+/* line 7, view2.scss */
 #about-content h1, #about-content h2 {
   margin: 0;
   padding: 0;
 }
-/* line 9, view2.scss */
+/* line 11, view2.scss */
 #about-content p {
   margin: 4px 0 0 0;
 }
 
-/* line 13, view2.scss */
+/* line 15, view2.scss */
 #hex-float {
   height: 300px;
   position: relative;
@@ -23,22 +23,113 @@
   left: 0;
 }
 
-/* line 21, view2.scss */
+/********************* Lower Container **********************/
+/* line 24, view2.scss */
+#lower-container {
+  margin: 0 auto;
+  max-width: 1180px;
+  height: auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  overflow: hidden;
+}
+
+/* line 32, view2.scss */
 .side-content {
   width: 30%;
   display: inline-block;
   padding: 40px;
+  max-width: 400px;
+  position: absolute;
+  background: url("img/pencil_top_angle_small2.jpg") top right no-repeat, url("img/pencil_bottom_angle_small2.jpg") bottom right no-repeat, url("img/pencil_vertical_repeat_small2.jpg") center right;
+  background-repeat-x: no-repeat;
+  -webkit-transition: all 180ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  -moz-transition: all 180ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 180ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* line 26, view2.scss */
+/* line 45, view2.scss */
+.column {
+  text-align: justify;
+}
+
+/* line 48, view2.scss */
 .left-side {
-  /*float: left;
-  clear: both;*/
+  margin-right: 50%;
+  right: 0;
+  padding-right: 120px;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -ms-filter: "FlipH";
+  filter: FlipH;
+}
+/* line 53, view2.scss */
+.left-side h1 {
+  text-align: right;
+}
+/* line 59, view2.scss */
+.left-side * {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -ms-filter: "FlipH";
+  filter: FlipH;
+  /* flip the innards back the right way */
 }
 
-/* line 30, view2.scss */
+/* line 63, view2.scss */
 .right-side {
-  margin-left: 300px;
-  /*float: right;
-  clear: both;*/
+  margin-left: 50%;
+  left: 0;
+  padding-right: 120px;
+  /* right is left because we're flipping this */
+}
+
+@media screen and (max-width: 1024px) {
+  /* line 69, view2.scss */
+  .side-content {
+    width: 35%;
+    padding-right: 80px;
+    padding-left: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 77, view2.scss */
+  .side-content {
+    max-width: 100%;
+    width: auto;
+    float: none;
+    position: static;
+    padding: 40px 80px 40px 40px;
+    margin: 0 40px 0 40px;
+  }
+
+  /* line 86, view2.scss */
+  .left-side h1 {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 92, view2.scss */
+  .side-content {
+    padding: 40px;
+    margin: 0;
+    background-image: none;
+  }
+}
+/*************** Animations *************/
+/* line 100, view2.scss */
+.flip-it {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -ms-filter: "FlipH";
+  filter: FlipH;
 }

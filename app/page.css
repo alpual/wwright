@@ -7,19 +7,20 @@ html, body {
 html, body, .view-container, header, section, div {
   vertical-align: top;
   display: block;
+  color: #343444;
 }
 
-/* line 8, page.scss */
+/* line 9, page.scss */
 body {
   overflow: auto;
 }
 
-/* line 11, page.scss */
+/* line 12, page.scss */
 header, section {
   clear: both;
 }
 
-/* line 14, page.scss */
+/* line 15, page.scss */
 .view-container {
   height: 100%;
   width: 100%;
@@ -27,44 +28,16 @@ header, section {
   position: absolute;
 }
 
-/* line 20, page.scss */
+/* line 21, page.scss */
 .clear {
   clear: both;
 }
 
-/* line 23, page.scss */
+/* line 24, page.scss */
 .clearfix:after {
   content: ".";
   visibility: hidden;
   display: block;
   height: 0;
   clear: both;
-}
-
-/******************** Header **************/
-/* line 31, page.scss */
-#top-bar {
-  /*background-color: #333;
-  opacity: .6;*/
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-}
-/* line 37, page.scss */
-#top-bar #logo {
-  max-height: 2.5em;
-  margin: .5em;
-  float: left;
-  margin-left: 1.25em;
-}
-
-/* line 45, page.scss */
-nav {
-  float: right;
-  margin: 1em;
-}
-/* line 48, page.scss */
-nav a {
-  padding: .75em;
-  color: #666699;
 }

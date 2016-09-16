@@ -36,6 +36,7 @@ angular.module('myApp.view1', ['ngRoute'])
     $scope.isLoading = true;
     $scope.percentLoaded = 0;
 }]);
+
 app.controller('preloadController', function($scope, preloader) {
      $scope.imageLocations = [
                     "img/LargeHexLogo.png",

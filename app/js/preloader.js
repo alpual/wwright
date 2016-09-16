@@ -114,7 +114,7 @@ angular
                         // source. Failure to do so will prevent the events from proper
                         // triggering in some browsers.
                         var image = $( new Image() )
-                            .load(
+                            .on("load",
                                 function( event ) {
                                     // Since the load event is asynchronous, we have to
                                     // tell AngularJS that something changed.
@@ -128,7 +128,7 @@ angular
                                     );
                                 }
                             )
-                            .error(
+                            .on("error",
                                 function( event ) {
                                     // Since the load event is asynchronous, we have to
                                     // tell AngularJS that something changed.

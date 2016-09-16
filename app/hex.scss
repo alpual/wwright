@@ -1,3 +1,5 @@
+@import 'base';
+@import 'menu';
 @import 'ref';
 @import 'view2';
 @import 'page';
@@ -30,11 +32,6 @@ $container-left: 0px;
   @return ($hexSize / 1.732) * ($row - 1);
 }
 
-@mixin setTransitions($ms){
-  -webkit-transition: background-image $ms ease-in-out;
-  -moz-transition: background-image $ms ease-in-out;
-  transition: background-image $ms ease-in-out;
-}
 
 .hex {
   pointer-events: all;

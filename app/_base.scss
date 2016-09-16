@@ -1,0 +1,27 @@
+@mixin setTransitions($ms){
+  -webkit-transition: background-image $ms ease-in-out;
+  -moz-transition: background-image $ms ease-in-out;
+  transition: background-image $ms ease-in-out;
+}
+
+@mixin setPaddingTransitions($ms){
+  -webkit-transition: padding $ms cubic-bezier(.25,.8,.25,1);
+  -moz-transition: padding $ms cubic-bezier(.25,.8,.25,1);
+  transition: padding $ms cubic-bezier(.25,.8,.25,1);
+}
+
+@mixin setAllTransitions($ms){
+  -webkit-transition: all $ms cubic-bezier(.25,.8,.25,1);
+  -moz-transition: all $ms cubic-bezier(.25,.8,.25,1);
+  transition: all $ms cubic-bezier(.25,.8,.25,1);
+}
+
+@mixin flipItHorizontal(){
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: "FlipH";
+    filter: FlipH;
+}
