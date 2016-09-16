@@ -27,10 +27,11 @@
      artist and musician.</p>
   <p>I'm a digital nomad.</p>
 </section>
-<section id="hex-float" class="clearfix">
-  <a class='hex medium northHex' ng-mouseover="northSource = 'img/LargeHexAboutHover7.png'" ng-mouseout="northSource = 'img/LargeHexAbout.png'" ng-init="northSource='img/LargeHexAbout.png'">
-    <img src='{{northSource}}' ></img>
-  </a>
+<section id="hex-float" class="clearfix" ng-controller="tilehexCtrl">
+  <a tilehex  cardinality="north" hex-size="medium" default-src="img/LargeHexAbout.png" hover-src="img/LargeHexAboutHover7.png">
+    <img src="img/largeHexAboutHover7.png"></img>
+  </a tilehex>
+  
   <a class='hex medium westHex' href="#view2" ng-mouseover="westSource = 'img/LargeHexAboutHover7.png'" ng-mouseout="westSource = 'img/LargeHexAbout.png'" ng-init="westSource='img/LargeHexAbout.png'">
     <img src='{{westSource}}' ></img>
   </a>

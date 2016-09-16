@@ -16,7 +16,7 @@
 
 
             return {
-                restrict: 'E',
+                restrict: 'A',
                 transclude: false,
                 scope: {
                     /*psOpen: '=?',
@@ -33,13 +33,18 @@
                     psClickOutside: '@',
                     onopen: '=?',
                     onclose: '=?'*/
+                    cardinality: '@',
+                    defaultSrc: '@',
+                    hoverSrc: '@',
+                    hexSize: '@', 
+                    hexClass: '@'
 
                 },
                 link: function ($scope, el, attrs) {
 
                     var param = {};
 
-                    param.side = $scope.psSide || 'right';
+                    /*param.side = $scope.psSide || 'right';
                     param.speed = $scope.psSpeed || '0.5';
                     param.size = $scope.psSize || '300px';
                     param.zindex = $scope.psZindex || 1000;
@@ -48,34 +53,34 @@
                     param.container = $scope.psContainer || false;
                     param.keyListener = $scope.psKeyListener === 'true';
                     param.bodyClass = $scope.psBodyClass || false;
-                    param.clickOutside = $scope.psClickOutside !== 'false';
-
-                    param.push = param.push && !param.container;
-
+                    param.clickOutside = $scope.psClickOutside !== 'false';*/
+                    param.hexSize = $scope.hexSize || 'medium';
+                    param.cardinality = $scope.cardinality || 'false';
+                    param.defaultSrc = $scope.defaultSrc || 'false';
+                    param.hoverSrc = $scope.hoverSrc || 'false';
+                    param.className = $scope.psClass || 'tilehex';
+                    
                     el.addClass(param.className);
+                    el.addClass('hex');
+                    el.addClass(param.hexSize);
 
+                    console.log(el);
                     /* DOM manipulation */
 
-                    var content, slider, body, isOpen = false;
+                    if(param.cardinality) {
+
+                        el.addClass(param.cardinality + "Hex");
+                    }
+
+                    /*var content, slider, body;
 
                     if (param.container) {
                         body = document.getElementById(param.container);
                     } else {
                         body = document.body;
-                    }
+                    }*/
 
-                    function onBodyClick(e) {
-                        if(isOpen && !slider.contains(e.target)) {
-                            isOpen = false;
-                            $scope.psOpen = false;
-                            $scope.$apply();
-                        }
-
-                        if($scope.psOpen) {
-                            isOpen = true;
-                        }
-                    }
-
+                    /*
                     function setBodyClass(value){
                         if (param.bodyClass) {
                             var bodyClass = param.className + '-body';
@@ -315,7 +320,7 @@
                             psClose(slider, param);
                         });
                     }
-
+                    /**/
                 }
             };
         }]);
