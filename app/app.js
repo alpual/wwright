@@ -6,6 +6,7 @@ var app = angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.pageslide',
+  'myApp.largehex',
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
