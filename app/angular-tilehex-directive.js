@@ -36,7 +36,7 @@
                     param.hoverSrc = $scope.hoverSrc || 'false';
                     param.className = $scope.hexClass || 'tilehex';
                     param.rotateTime = $scope.rotateTime || 3000;
-                    param.screenSize = $scope.screenSize || 'all'; // format "min-width x" "max-width x" or "all"
+                    param.screenSize = $scope.screenSize || 'all'; // format "min-width x" "max-width x" or "all" inclusive
                     
                     el.addClass(param.className);
                     el.addClass('hex');
@@ -44,40 +44,49 @@
 
                     console.log(el);
                     /* DOM manipulation */
-                    /* 
-                     * Check to see if the hex should be displayed at the current screen size.
-                     * uses parameter screenSize. Skip this if size is set to 'all'.
-                     */
-                     /*if (param.screenSize != 'all'){
-                        if( param.screenSize.indexOf('min-width') >= 0) {
-                            /* set minimum screen size */
-                            /*var minWidth = param.screenSize.split(' ')[1];
-                            var currentWidth = window.innerWidth;
-                            console.log ("current width: " + currentWidth + ", min-width set to " + minWidth);
-                            if(currentWidth < minWidth){
-                                el.addClass("hidden");
-                                el.addClass("gone");
-                            }
-                            angular.element(window).bind('resize', function () {
-                                var minWidth = param.screenSize.split(' ')[1];
-                                var currentWidth = window.innerWidth;
-                                console.log(window.innerWidth);
-                                if(currentWidth < minWidth){
-                                    el.addClass("hidden");
-                                    el.addClass("gone");
-                                } else {
 
-                                    el.removeClass("hidden");
-                                    el.removeClass("gone");
-                                }
-                            });
+
+                    /* 
+                     * Screen Width
+                     * Check to see if the hex should rotate at the current screen size.
+                     * uses parameter screenSize. Skip this if size is set to 'all'.
+                     * set defaults and bind function handleWidth() on window resize
+                     */
+                    var theWidth, currentWidth, stopRotate = false;
+                    if (param.screenSize != 'all'){
+                        if( param.screenSize.indexOf('min-width') >= 0) {
+                            // set minimum screen size 
+                            handleWidth('min');
+                            angular.element(window).bind('resize', handleWidth);
+                            console.log("bind min");
                         }
                         if( param.screenSize.indexOf('max-width') >= 0) {
-                            /* set maximum screen size */
-                        /*}
-                     }*/
+                            // set maximum screen size 
+                            handleWidth('max');
+                            angular.element(window).bind('resize', handleWidth);
+                            console.log("bind max");
+                        }
+                    }
 
                     /*
+                     * HANDLE WIDTH
+                     * called to determine if a user-supplied max or min width has been surpassed
+                     * stops image rotation if outside of user defined range
+                     */
+                    function handleWidth(){
+                        var mode = param.screenSize.indexOf('max-width') >= 0 ? 'max' : 'min';
+                        theWidth = param.screenSize.split(' ')[1];
+                        currentWidth = window.innerWidth;
+                        console.log("current width " + currentWidth + " compare to theWidth: " + theWidth);
+                        if(mode == 'min' && currentWidth <= theWidth || mode == 'max' && currentWidth >= theWidth){
+                            stopRotate = true;
+                        } else {
+                            stopRotate = false;
+                        }
+                    }
+
+                    /*
+                     * CARDINALITY
                      * Add Cardinality class if given.
                      * north, south, east and west are valid
                      * sets the cardinality as a class so that applicable css styles apply
@@ -88,6 +97,7 @@
                         el.addClass(param.cardinality + "Hex"); // class northHex, eastHex etc...
                     }
                     /* 
+                     * HOVER
                      * add hover source for image to display on hover.
                      * note that hover is not supported for hex galleries
                      * of rotating images.
@@ -111,6 +121,7 @@
                         }
                     }
                     /*
+                     * GALLERY 
                      * Add gallery functionality for multiple hex images fading in and out.
                      * uses parameter rotateTime if set.  Default 3000ms
                      */
@@ -123,25 +134,46 @@
                             theChild.className = "hidden";
                             childList.push(theChild); // add the new children to the childList
                         }  
-                        setInterval(function(){ return rotate(childList); }, param.rotateTime); // switch images periodically.                          
+                        setInterval(function(){ return rotate(); }, param.rotateTime); // switch images periodically.                          
                     }
+
+                    /*
+                     * ROTATE
+                     * utility function rotate is called to switch the images in the hex.
+                     * will switch back to defaultSrc if stopRotate is set to true
+                     * stopRotate is set based on the window innerWidth in function handleWidth()
+                     */
                     var childId = 0;
-                    function rotate(childList){
-                        //console.log(childList);
-                        //console.log(param.rotateTime);
+                    function rotate(){
+                        if( stopRotate ){
+                            if (param.defaultSrc != 'false'){
+                                el[0].children[childId].className = 'gone';
+                                el[0].children[0].className = 'opacityA';
+                            }
+                            return;
+                        }
                         el[0].children[childId].className = "opacityZ"; //opacity zero
                         var prevChildId = childId;
                         childId ++;
-                        if (childId == childList.length)
+                        if (childId == el.children.length)
                             childId = 0;
                         /* Now we have the next child and the previous child */
                         setTimeout(function(){
                             el[0].children[prevChildId].className = "gone"; // opacity and height 0
                             el[0].children[childId].className = "opacityA"; // opacity 1
                         }, 180);
-                   }
+                    }
 
+                    /*
+                     * CLEANUP
+                     * clean up our event handler... don't want this getting too weird
+                     */
+                    cleanUp = function () {
+                        window.angular.element($window).off('resize', handleWidth);
+                    };
+                    $scope.$on('$destroy', cleanUp)
                    
+
                 }
             };
         }]);
