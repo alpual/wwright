@@ -145,6 +145,9 @@ $container-left: 0px;
       transform: translate(1%, 150%);
     }
   } // medium
+  &.bgcolor, &.bgcolor:before, &.bgcolor:after {
+    background-color: #9e9e9e;
+  }
 }
 
 

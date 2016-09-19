@@ -16,8 +16,8 @@ Thanks to subtlepatterns.com for the cool cork wallet pattern
   position: absolute;
   z-index: 1;
   /*background-color: #F1F2DF;
-  border-bottom: solid 1px #C99E89;
-  /*background-image: url("img/cork-wallet.png");*/
+  border-bottom: solid 1px #C99E89;*/
+  background-image: url("img/merely_cubed.jpg");
 }
 /* line 21, menu.scss */
 #top-bar #logo {
@@ -48,7 +48,7 @@ nav {
   background-color: #4B5B6E;
   text-decoration: none;
   opacity: .9;
-  background-image: url("img/pencil-shading.jpg");
+  background-image: url("img/merely_cubed.jpg");
   background-blend-mode: multiply;
 }
 

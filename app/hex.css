@@ -16,8 +16,8 @@ Thanks to subtlepatterns.com for the cool cork wallet pattern
   position: absolute;
   z-index: 1;
   /*background-color: #F1F2DF;
-  border-bottom: solid 1px #C99E89;
-  /*background-image: url("img/cork-wallet.png");*/
+  border-bottom: solid 1px #C99E89;*/
+  background-image: url("img/merely_cubed.jpg");
 }
 /* line 21, menu.scss */
 #top-bar #logo {
@@ -48,7 +48,7 @@ nav {
   background-color: #4B5B6E;
   text-decoration: none;
   opacity: .9;
-  background-image: url("img/pencil-shading.jpg");
+  background-image: url("img/merely_cubed.jpg");
   background-blend-mode: multiply;
 }
 
@@ -487,8 +487,12 @@ header, section {
   top: 59.57149px;
   transform: translate(1%, 150%);
 }
+/* line 148, hex.scss */
+.hex.bgcolor, .hex.bgcolor:before, .hex.bgcolor:after {
+  background-color: #9e9e9e;
+}
 
-/* line 151, hex.scss */
+/* line 154, hex.scss */
 .container {
   width: 1024px;
   line-height: 1.0;
@@ -498,7 +502,7 @@ header, section {
   margin-right: auto;
 }
 
-/* line 160, hex.scss */
+/* line 163, hex.scss */
 .hexGrid {
   position: absolute;
   top: 0px;
@@ -507,51 +511,51 @@ header, section {
   padding-top: 22.89397px;
 }
 
-/* line 168, hex.scss */
+/* line 171, hex.scss */
 .over480 {
   display: none;
 }
 
 @media screen and (min-width: 480px) {
-  /* line 172, hex.scss */
+  /* line 175, hex.scss */
   .over480 {
     display: inherit;
   }
 }
-/* line 177, hex.scss */
+/* line 180, hex.scss */
 .visible {
   display: inherit;
   opacity: 1;
 }
 
-/* line 182, hex.scss */
+/* line 185, hex.scss */
 .invisible {
   display: hidden;
   height: 0px;
 }
 
-/* line 186, hex.scss */
+/* line 189, hex.scss */
 .opacityZ {
   opacity: 0;
   position: absolute;
   top: 0;
 }
 
-/* line 191, hex.scss */
+/* line 194, hex.scss */
 .opacityA {
   opacity: 1;
   position: absolute;
   top: 0;
 }
 
-/* line 196, hex.scss */
+/* line 199, hex.scss */
 .gone {
   opacity: 0 !important;
   height: 0 !important;
   /*width: 0!important;*/
 }
 
-/* line 202, hex.scss */
+/* line 205, hex.scss */
 ol {
   pointer-events: none;
   -webkit-margin-before: 0px;
@@ -559,13 +563,13 @@ ol {
   -webkit-margin-after: 0px;
 }
 
-/* line 209, hex.scss */
+/* line 212, hex.scss */
 ol.even {
   position: relative;
   left: 39.65236px;
 }
 
-/* line 214, hex.scss */
+/* line 217, hex.scss */
 ol.odd {
   position: relative;
   left: 0px;
@@ -573,7 +577,7 @@ ol.odd {
   margin-bottom: 22.89397px;
 }
 
-/* line 221, hex.scss */
+/* line 224, hex.scss */
 ol {
   white-space: nowrap;
 }
