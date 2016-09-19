@@ -2,6 +2,7 @@
 
 var mobileMenu = angular.module("myApp.tilehex", ["tilehex-directive"]);
 mobileMenu.controller('tilehexCtrl',['$scope',function($scope){
+    $scope.rotateTime = "300";
     /*
     $scope.size = '40px';
     $scope.toggle = function() {

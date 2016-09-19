@@ -2,8 +2,7 @@
 
 #about-content {
 	text-align: center;
-	width: 300px;
-	margin: 80px auto 40px auto;
+	margin: 80px 40px 40px 40px;
 	h1, h2{
 		margin: 0;
 		padding: 0;
@@ -13,8 +12,8 @@
 	}
 }
 #hex-float {
-	//margin-top: 10%;
-	height: 300px;
+	/*margin-top: 10%;*/
+	min-height: 200px;
 	position: relative;
 	top: 0;
 	right: 0;
@@ -23,9 +22,8 @@
 /********************* Lower Container **********************/
 #lower-container {
 	margin: 0 auto;
-	max-width: 1180px;
 	height: auto;
-	margin-top: 80px;
+	/*margin-top: 80px;*/
 	margin-bottom: 80px;
 	overflow: hidden;
 }
@@ -89,12 +87,29 @@
 	}
 }
 @media screen and (max-width: 480px){
+
 	.side-content{
 		padding: 40px;
 		margin: 0;
 		background-image: none;
 	}
 
+}
+@media screen and (min-width: 480px){
+	#about-content {
+		width: 300px;
+		
+		margin: 80px auto 40px auto;
+	}
+	#hex-float {
+		height: 300px;
+	}
+	#lower-container {
+		max-width: 1180px;
+		margin-top: 80px;
+		margin-bottom: 80px;
+		overflow: hidden;
+	}
 }
 /*************** Animations *************/
 .flip-it {
