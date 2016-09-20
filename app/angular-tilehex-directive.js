@@ -169,7 +169,7 @@
                      * clean up our event handler... don't want this getting too weird
                      */
                     cleanUp = function () {
-                        window.angular.element($window).off('resize', handleWidth);
+                        window.angular.element(window).off('resize', handleWidth);
                     };
                     $scope.$on('$destroy', cleanUp)
                    

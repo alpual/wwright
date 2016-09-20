@@ -1,21 +1,11 @@
 <header id="top-bar" class="clearfix">
-  <nav class="menu-large">
-    <a href="index.html#/view1.html">Home</a>
-    <a href="index.html#/view2.html">About</a>
-    <a href="index.html#/view3.html">Works</a>
-    <a href="index.html#/view4.html">Contact</a>
-  </nav>
+  <div nav-links nav-size="large"></div>
   <a href="index.html#/view1.html"><img id="logo" src="img/logo-small.png"></img></a>
 
   <div ng-controller="pageslideCtrl">
       <button href="" ng-click="toggle()">☰</button>
       <pageslide ps-side="top" ps-open="checked" ps-class="topMenu" ps-size="160px">
-        <nav class= "menu-small">
-          <a href="index.html#/view1.html">Home</a>
-          <a href="index.html#/view2.html">About</a>
-          <a href="index.html#/view3.html">Works</a>
-          <a href="index.html#/view4.html">Contact</a>
-        </nav>
+        <div nav-links nav-size="small"></div>
       </pageslide>
   </div>
   

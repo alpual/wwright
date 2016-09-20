@@ -75,10 +75,29 @@
         }
     };
     
+    var navLinks = function () {
+        return {
+            restrict: 'EA', //E = element, A = attribute, C = class, M = comment         
+            /*templateUrl: 'hex.html',*/
+            templateUrl: '/app/nav.html',
+            scope: {
+                navSize: '@'
+            },
+            replace: true,
+            link: function ($scope, element, attrs){
+                var param = {};
+
+                param.navClass = 'menu-' + $scope.navSize || '';
+                element.addClass(param.navClass);
+            }
+        };
+    };
 
     angular.module('myApp')
         .directive('alpualRef', referenceDirective);
     angular.module('myApp')
         .directive('gridHex', gridHexDirective);
+    angular.module('myApp')
+        .directive('navLinks', navLinks);
 
 }());
