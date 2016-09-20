@@ -18,18 +18,25 @@
     <!-- END: Background hexGrid -->
    
     <!-- BEGIN: Large Hex Menu -->
-    <a class='hex large northHex' ng-mouseover="northSource = 'img/LargeHexLogoHover.png'" ng-mouseout="northSource = 'img/LargeHexLogo.png'" ng-init="northSource='img/LargeHexLogo.png'">
-      <img src='{{northSource}}'></img>
-    </a>
-    <a class='hex large westHex' href="#view2" ng-mouseover="westSource = 'img/LargeHexAboutHover7.png'" ng-mouseout="westSource = 'img/LargeHexAbout.png'" ng-init="westSource='img/LargeHexAbout.png'">
-      <img src='{{westSource}}'></img>
-    </a>
-    <a class='hex large eastHex' ng-mouseover="eastSource = 'img/LargeHexWorksHover.png'" ng-mouseout="eastSource = 'img/LargeHexWorks.png'" ng-init="eastSource='img/LargeHexWorks.png'">
-      <img src='{{eastSource}}'></img>
-    </a>
-    <a class='hex large southHex' ng-mouseover="southSource = 'img/LargeHexContactHover2.png'" ng-mouseout="southSource = 'img/LargeHexContact.png'" ng-init="southSource='img/LargeHexContact.png'">
-      <img src='{{southSource}}'></img>
-    </a>
+
+    <section id="frontPageMenu" class="clearfix" ng-controller="tilehexCtrl">
+      <a tilehex cardinality="north" hex-size="large" screen-size="max-width: 480" hover-src="img/LargeHexLogoHover.png" >
+        <img src="img/LargeHexLogo.png"></img>
+      </a>
+      
+      <a tilehex cardinality="west" hex-size="large" hover-src="img/LargeHexAboutHover7.png" href="index.html#/view2" >
+        <img src="img/largeHexAbout.png"></img>
+      </a>
+
+      <a tilehex cardinality="east" hex-size="large" hover-src="img/LargeHexWorksHover.png" href="index.html#/works" >
+        <img src="img/largeHexWorks.png"></img>
+      </a>
+      <a tilehex cardinality="south" hex-size="large" hover-src="img/LargeHexContactHover2.png" href="index.html#/contact" >
+        <img src="img/LargeHexContact.png"></img>
+      </a>
+    </section>
+
+
     <!-- END: Large Hex Menu -->
   </div> <!-- END: container - Results View -->
 </div> <!-- END: ng-switch isLoading -->
