@@ -4,6 +4,7 @@
 @import 'view2';
 @import 'page';
 
+
 $container-width: 1024px;
 $hex-size: $container-width / (24.516);/*($container-width / 13) * (6 / 10.2) * (14/15); //41px;*/
 $hex-gutter: $hex-size / 6;
@@ -13,6 +14,8 @@ $row-margin: ($hex-size + $gutter-height ) / 2; /*1 * ($hex-size / 2 * 1.732) + 
 $large-hex-size: 2 * $hex-size + 2 * $row-margin + 4;
 $medium-hex-size: $large-hex-size / (1.2);
 $container-left: 0px;
+
+@import 'entries';
 
 @function getWidth($h){
   @return $h * (1.732);
@@ -37,6 +40,10 @@ $container-left: 0px;
   pointer-events: all;
   @include setTransitions(100ms);
   display: inline-block;
+
+  &.bgcolor, &.bgcolor:before, &.bgcolor:after {
+    background-color: #9e9e9e;
+  }
 
   &:before, &:after{
     position: absolute;
@@ -84,37 +91,6 @@ $container-left: 0px;
     }
   } // small
   
-  &.large {
-    @include setDimensions($large-hex-size);
-    position: absolute;
-    left: 50%;
-    transform: translate(-50.2%, 0);
-    z-index: 1;
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-
-    img {
-      width: getWidth($large-hex-size);
-      position: relative;
-      top: $large-hex-size * (-90 / 188);
-      pointer-events: none;
-    }
-
-    &.northHex{
-      top: yPos(2); //put the top point in the second row 
-    }
-    &.southHex{
-      top: yPos(8);
-    }
-    &.eastHex{
-      top: yPos(5);
-      transform: translate(1%, 0);
-    }
-    &.westHex{
-      top: yPos(5);
-      transform: translate(-101.3%, 0);
-    }
-  } // large
-
   &.medium {
     @include setDimensions($medium-hex-size);
     position: absolute;
@@ -145,9 +121,45 @@ $container-left: 0px;
       transform: translate(1%, 150%);
     }
   } // medium
-  &.bgcolor, &.bgcolor:before, &.bgcolor:after {
-    background-color: #9e9e9e;
-  }
+
+  &.large {
+    @include setDimensions($large-hex-size);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50.2%, 0);
+    z-index: 1;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+    img {
+      width: getWidth($large-hex-size);
+      position: relative;
+      top: $large-hex-size * (-90 / 188);
+      pointer-events: none;
+    }
+
+    &.northHex{
+      top: yPos(2); //put the top point in the second row 
+    }
+    &.southHex{
+      top: yPos(8);
+    }
+    &.eastHex{
+      top: yPos(5);
+      transform: translate(1%, 0);
+    }
+    &.westHex{
+      top: yPos(5);
+      transform: translate(-101.3%, 0);
+    }
+    &.freeHex{
+      position: relative;
+      left: auto;
+      transform: none;
+      float: left;
+      margin: $large-hex-size 80px;
+    }
+  } // large
+
 }
 
 
