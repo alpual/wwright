@@ -1,4 +1,43 @@
 /* 
+white:        #FFFFFF
+all cs:       #CCCCCC
+cool easy gray:   #4B5B6E
+Old Wrench Steel: #343444
+Cure:       #F1F2DF
+Perfection:     #8A6A6A
+Cream Vintage   #C99E89
+*/
+/*($container-width / 13) * (6 / 10.2) * (14/15); //41px;*/
+/*$small-hex-margin: ($hex-size * (1.732)) / (1.732 * 2) + ($hex-gutter);*/
+/*1 * ($hex-size / 2 * 1.732) + ($hex-gutter / 4 * 1.732) - 1px;*/
+/* line 83, _base.scss */
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+/* line 89, _base.scss */
+h1 {
+  font-family: 'Josefin Slab', serif;
+  font-family: 'Josefin Sans', sans-serif;
+  /**/
+  font-size: 30pt;
+  font-weight: bold;
+  color: #4b5b6e;
+  /*lighten(#400A19, 5%); /*darken(#8A6A6A, 10%);/* #4B5B6E;/**/
+}
+
+/* line 96, _base.scss */
+h2 {
+  font-weight: 100;
+  font-size: 18pt;
+  font-family: 'Quicksand', sans-serif;
+  color: #4B5B6E;
+}
+
+/* 
 white: 				#FFFFFF
 all cs: 			#CCCCCC
 cool easy gray: 	#4B5B6E
@@ -361,12 +400,12 @@ header, section {
   background: url("img/pencil_top_angle_small2.jpg") top right no-repeat, url("img/pencil_bottom_angle_small2.jpg") bottom right no-repeat, url("img/pencil_vertical_repeat_small2.jpg") center right;
   background-repeat-x: no-repeat;
   display: inline-block;
-  padding: 80px;
+  padding: 0 80px;
   max-width: 100%;
-  background: url(img/pencil_top_angle_small2.jpg) top right no-repeat, url(img/pencil_bottom_angle_small2.jpg) bottom right no-repeat, url(img/pencil_vertical_repeat_small2.jpg) center right;
+  background: url(img/pencil_top_angle_small2.png) top right no-repeat, url(img/pencil_bottom_angle_small2.png) bottom right no-repeat, url(img/pencil_vertical_repeat_small2.jpg) center right;
   background-repeat-x: no-repeat;
 }
-/* line 3, entries.scss */
+/* line 17, entries.scss */
 .works-entry:before {
   content: '';
   height: auto;
@@ -375,10 +414,10 @@ header, section {
   top: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
-  width: 100px;
-  background: url(img/pencil_top_angle_small2.jpg) top right no-repeat, url(img/pencil_bottom_angle_small2.jpg) bottom right no-repeat, url(img/pencil_vertical_repeat_small2.jpg) center right;
+  right: 0;
+  z-index: 1;
   background-repeat-x: no-repeat;
+  background: url(img/pencil_top_angle_small2.png) top right no-repeat, url(img/pencil_bottom_angle_small2.png) bottom right no-repeat, url(img/pencil_vertical_repeat_small2.jpg) center right repeat-y;
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
@@ -386,22 +425,100 @@ header, section {
   transform: scaleX(-1);
   -ms-filter: "FlipH";
   filter: FlipH;
+  pointer-events: none;
+}
+/* line 30, entries.scss */
+.works-entry .entry-header {
+  text-align: left;
+  margin-top: 234.65046px;
+}
+/* line 33, entries.scss */
+.works-entry .entry-header h1 {
+  margin: 0;
 }
 /* line 37, entries.scss */
-.works-entry .entry-header {
-  float: right;
-  text-align: left;
-  padding-top: 266.65046px;
-  max-width: 700px;
-}
-/* line 44, entries.scss */
 .works-entry .left-column {
   float: left;
   max-width: 400px;
 }
-/* line 48, entries.scss */
-.works-entry .entry-content {
+/* line 42, entries.scss */
+.works-entry .entry-content a {
+  color: #8A6A6A;
+}
+/* line 45, entries.scss */
+.works-entry .entry-content .site-link {
+  font-size: 14pt;
   float: right;
+  margin-bottom: 80px;
+  letter-spacing: 2px;
+  margin-right: 40px;
+}
+/* line 54, entries.scss */
+.works-entry .highlights {
+  line-height: 30pt;
+}
+@media screen and (min-width: 960px) {
+  /* line 2, entries.scss */
+  .works-entry {
+    /*width: 100%;*/
+    max-width: 1020px;
+  }
+  /* line 60, entries.scss */
+  .works-entry .entry-header, .works-entry .entry-content {
+    position: relative;
+    pointer-events: all;
+    left: 40%;
+    width: 58%;
+    float: left;
+    margin-left: 30px;
+    /**/
+  }
+  /* line 68, entries.scss */
+  .works-entry .entry-content {
+    margin-top: 16pt;
+    /* $h1-font-size; */
+  }
+  /* line 71, entries.scss */
+  .works-entry .left-column {
+    width: 38%;
+    position: absolute;
+    right: 60%;
+    top: 0;
+    height: 100%;
+    background: url(img/brillant.png) repeat;
+    background-blend-mode: multiply;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 0 8px -6px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 3px 0 8px -6px rgba(0, 0, 0, 0.8);
+    box-shadow: 3px 0 8px -6px rgba(0, 0, 0, 0.8);
+  }
+  /* line 61, _base.scss */
+  .works-entry .left-column:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 8px;
+    right: -10px;
+    left: auto;
+    width: 80%;
+    top: 80%;
+    -webkit-box-shadow: -8px 8px 5px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: -8px 8px 5px rgba(0, 0, 0, 0.16);
+    box-shadow: -8px 8px 5px rgba(0, 0, 0, 0.16);
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+    -ms-transform: rotate(1deg);
+    transform: rotate(1deg);
+  }
+  /* line 81, entries.scss */
+  .works-entry .left-column .hex, .works-entry .left-column .highlights {
+    margin: 0 0 0 60px;
+  }
+  /* line 84, entries.scss */
+  .works-entry .left-column:after {
+    border-radius: 10px;
+  }
 }
 
 /* line 39, hex.scss */
@@ -548,7 +665,7 @@ header, section {
   left: auto;
   transform: none;
   float: left;
-  margin: 133.32523px 80px;
+  margin: 133.32523px 80px 106.66018px 80px;
 }
 
 /* line 166, hex.scss */

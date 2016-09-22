@@ -156,7 +156,7 @@ $container-left: 0px;
       left: auto;
       transform: none;
       float: left;
-      margin: $large-hex-size 80px;
+      margin: $large-hex-size 80px ($large-hex-size / 1.25) 80px;
     }
   } // large
 
