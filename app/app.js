@@ -8,7 +8,8 @@ var app = angular.module('myApp', [
   'myApp.works',
   'myApp.pageslide',
   'myApp.tilehex',
-  'myApp.version'
+  'myApp.version',
+  'ngAnimate'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.

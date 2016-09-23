@@ -10,7 +10,7 @@ Cream Vintage   #C99E89
 /*($container-width / 13) * (6 / 10.2) * (14/15); //41px;*/
 /*$small-hex-margin: ($hex-size * (1.732)) / (1.732 * 2) + ($hex-gutter);*/
 /*1 * ($hex-size / 2 * 1.732) + ($hex-gutter / 4 * 1.732) - 1px;*/
-/* line 83, _base.scss */
+/* line 85, _base.scss */
 body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5;
@@ -18,7 +18,7 @@ body {
   font-weight: 100;
 }
 
-/* line 89, _base.scss */
+/* line 91, _base.scss */
 h1 {
   font-family: 'Josefin Slab', serif;
   font-family: 'Josefin Sans', sans-serif;
@@ -29,12 +29,70 @@ h1 {
   /*lighten(#400A19, 5%); /*darken(#8A6A6A, 10%);/* #4B5B6E;/**/
 }
 
-/* line 96, _base.scss */
-h2 {
+/* line 98, _base.scss */
+h2, h3 {
   font-weight: 100;
   font-size: 18pt;
   font-family: 'Quicksand', sans-serif;
   color: #4B5B6E;
+}
+
+/* line 104, _base.scss */
+h3 {
+  font-size: 16pt;
+}
+
+/* line 108, _base.scss */
+.centered-content {
+  margin: 0 auto;
+  height: auto;
+  /*margin-top: 80px;*/
+  margin-bottom: 80px;
+  /*overflow: hidden;*/
+}
+
+@media screen and (min-width: 480px) {
+  /* line 117, _base.scss */
+  .centered-content {
+    max-width: 1180px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    margin: 80px auto;
+  }
+}
+/* line 125, _base.scss */
+.fade {
+  /*opacity: 0;*/
+  transition: all 120ms ease-in;
+}
+
+/* line 129, _base.scss */
+.second-fade,
+.pseudo-fade:before,
+.pseudo-fade:after {
+  transition: all 300ms ease-in;
+}
+
+/* line 135, _base.scss */
+.slow-fade.pseudo-fade:before,
+.slow-fade.pseudo-fade:after {
+  transition: all 1000ms ease-in;
+}
+
+/* line 140, _base.scss */
+.view-container.ng-enter .fade,
+.view-container.ng-enter .second-fade,
+.view-container.ng-enter .pseudo-fade:before,
+.view-container.ng-enter .pseudo-fade::after {
+  opacity: 0;
+}
+
+/* line 146, _base.scss */
+.view-container.ng-enter-active .fade,
+.view-container.ng-enter-active .second-fade,
+.view-container.ng-enter-active .pseudo-fade:before,
+.view-container.ng-enter-active .pseudo-fade::after {
+  opacity: 1;
 }
 
 /* 
@@ -213,19 +271,11 @@ header button {
   top: 0;
   right: 0;
   left: 0;
+  margin-bottom: 80px;
 }
 
 /********************* Lower Container **********************/
-/* line 23, view2.scss */
-#lower-container {
-  margin: 0 auto;
-  height: auto;
-  /*margin-top: 80px;*/
-  margin-bottom: 80px;
-  overflow: hidden;
-}
-
-/* line 30, view2.scss */
+/* line 25, view2.scss */
 .side-content {
   width: 30%;
   display: inline-block;
@@ -239,12 +289,12 @@ header button {
   transition: all 180ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* line 43, view2.scss */
+/* line 38, view2.scss */
 .column {
   text-align: justify;
 }
 
-/* line 46, view2.scss */
+/* line 41, view2.scss */
 .left-side {
   margin-right: 50%;
   right: 0;
@@ -257,11 +307,11 @@ header button {
   -ms-filter: "FlipH";
   filter: FlipH;
 }
-/* line 51, view2.scss */
+/* line 46, view2.scss */
 .left-side h1 {
   text-align: right;
 }
-/* line 57, view2.scss */
+/* line 52, view2.scss */
 .left-side * {
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
@@ -273,7 +323,7 @@ header button {
   /* flip the innards back the right way */
 }
 
-/* line 61, view2.scss */
+/* line 56, view2.scss */
 .right-side {
   margin-left: 50%;
   left: 0;
@@ -282,7 +332,7 @@ header button {
 }
 
 @media screen and (max-width: 1024px) {
-  /* line 67, view2.scss */
+  /* line 62, view2.scss */
   .side-content {
     width: 35%;
     padding-right: 80px;
@@ -290,7 +340,7 @@ header button {
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 75, view2.scss */
+  /* line 70, view2.scss */
   .side-content {
     max-width: 100%;
     width: auto;
@@ -300,13 +350,13 @@ header button {
     margin: 0 40px 0 40px;
   }
 
-  /* line 84, view2.scss */
+  /* line 79, view2.scss */
   .left-side h1 {
     text-align: left;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 91, view2.scss */
+  /* line 86, view2.scss */
   .side-content {
     padding: 40px;
     margin: 0;
@@ -314,27 +364,18 @@ header button {
   }
 }
 @media screen and (min-width: 480px) {
-  /* line 99, view2.scss */
+  /* line 94, view2.scss */
   #about-content {
     width: 300px;
     margin: 80px auto 40px auto;
   }
 
-  /* line 104, view2.scss */
-  #hex-float {
-    height: 300px;
-  }
-
-  /* line 107, view2.scss */
-  #lower-container {
-    max-width: 1180px;
-    margin-top: 80px;
-    margin-bottom: 80px;
-    overflow: hidden;
-  }
+  /*#hex-float {
+  	height: 300px;
+  }*/
 }
 /*************** Animations *************/
-/* line 115, view2.scss */
+/* line 104, view2.scss */
 .flip-it {
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
@@ -389,23 +430,12 @@ header, section {
   clear: both;
 }
 
-/*($container-width / 13) * (6 / 10.2) * (14/15); //41px;*/
-/*$small-hex-margin: ($hex-size * (1.732)) / (1.732 * 2) + ($hex-gutter);*/
-/*1 * ($hex-size / 2 * 1.732) + ($hex-gutter / 4 * 1.732) - 1px;*/
-/* line 2, entries.scss */
+/* line 3, entries.scss */
 .works-entry {
-  margin: 40px;
-  height: auto;
-  position: relative;
-  background: url("img/pencil_top_angle_small2.jpg") top right no-repeat, url("img/pencil_bottom_angle_small2.jpg") bottom right no-repeat, url("img/pencil_vertical_repeat_small2.jpg") center right;
-  background-repeat-x: no-repeat;
-  display: inline-block;
-  padding: 0 80px;
-  max-width: 100%;
   background: url(img/pencil_top_angle_small2.png) top right no-repeat, url(img/pencil_bottom_angle_small2.png) bottom right no-repeat, url(img/pencil_vertical_repeat_small2.jpg) center right;
   background-repeat-x: no-repeat;
 }
-/* line 17, entries.scss */
+/* line 6, entries.scss */
 .works-entry:before {
   content: '';
   height: auto;
@@ -427,64 +457,9 @@ header, section {
   filter: FlipH;
   pointer-events: none;
 }
-/* line 30, entries.scss */
-.works-entry .entry-header {
-  text-align: left;
-  margin-top: 234.65046px;
-}
-/* line 33, entries.scss */
-.works-entry .entry-header h1 {
-  margin: 0;
-}
-/* line 37, entries.scss */
-.works-entry .left-column {
-  float: left;
-  max-width: 400px;
-}
-/* line 42, entries.scss */
-.works-entry .entry-content a {
-  color: #8A6A6A;
-}
-/* line 45, entries.scss */
-.works-entry .entry-content .site-link {
-  font-size: 14pt;
-  float: right;
-  margin-bottom: 80px;
-  letter-spacing: 2px;
-  margin-right: 40px;
-}
-/* line 54, entries.scss */
-.works-entry .highlights {
-  line-height: 30pt;
-}
 @media screen and (min-width: 960px) {
-  /* line 2, entries.scss */
-  .works-entry {
-    /*width: 100%;*/
-    max-width: 1020px;
-  }
-  /* line 60, entries.scss */
-  .works-entry .entry-header, .works-entry .entry-content {
-    position: relative;
-    pointer-events: all;
-    left: 40%;
-    width: 58%;
-    float: left;
-    margin-left: 30px;
-    /**/
-  }
-  /* line 68, entries.scss */
-  .works-entry .entry-content {
-    margin-top: 16pt;
-    /* $h1-font-size; */
-  }
-  /* line 71, entries.scss */
+  /* line 20, entries.scss */
   .works-entry .left-column {
-    width: 38%;
-    position: absolute;
-    right: 60%;
-    top: 0;
-    height: 100%;
     background: url(img/brillant.png) repeat;
     background-blend-mode: multiply;
     border-radius: 10px;
@@ -492,7 +467,7 @@ header, section {
     -moz-box-shadow: 3px 0 8px -6px rgba(0, 0, 0, 0.8);
     box-shadow: 3px 0 8px -6px rgba(0, 0, 0, 0.8);
   }
-  /* line 61, _base.scss */
+  /* line 63, _base.scss */
   .works-entry .left-column:after {
     z-index: -1;
     position: absolute;
@@ -511,17 +486,142 @@ header, section {
     -ms-transform: rotate(1deg);
     transform: rotate(1deg);
   }
-  /* line 81, entries.scss */
+  /* line 25, entries.scss */
   .works-entry .left-column .hex, .works-entry .left-column .highlights {
     margin: 0 0 0 60px;
   }
-  /* line 84, entries.scss */
+  /* line 28, entries.scss */
   .works-entry .left-column:after {
     border-radius: 10px;
   }
 }
 
-/* line 39, hex.scss */
+/* line 35, entries.scss */
+.works-entry, .header-entry {
+  width: 100%;
+  margin: 40px;
+  height: auto;
+  position: relative;
+  display: inline-block;
+  padding: 0 80px;
+  max-width: 100%;
+}
+/* line 45, entries.scss */
+.works-entry .entry-header, .header-entry .entry-header {
+  text-align: left;
+  margin-top: 234.65046px;
+}
+/* line 48, entries.scss */
+.works-entry .entry-header h1, .header-entry .entry-header h1 {
+  margin: 0;
+}
+/* line 52, entries.scss */
+.works-entry .left-column, .header-entry .left-column {
+  float: left;
+  max-width: 400px;
+  left: 40px;
+}
+/* line 58, entries.scss */
+.works-entry .entry-content a, .header-entry .entry-content a {
+  color: #8A6A6A;
+}
+/* line 61, entries.scss */
+.works-entry .entry-content .site-link, .header-entry .entry-content .site-link {
+  font-size: 14pt;
+  float: right;
+  margin-bottom: 80px;
+  letter-spacing: 2px;
+  margin-right: 40px;
+}
+/* line 70, entries.scss */
+.works-entry .highlights, .header-entry .highlights {
+  line-height: 30pt;
+}
+@media screen and (min-width: 960px) {
+  /* line 35, entries.scss */
+  .works-entry, .header-entry {
+    max-width: 1020px;
+  }
+  /* line 75, entries.scss */
+  .works-entry .entry-header, .works-entry .entry-content, .header-entry .entry-header, .header-entry .entry-content {
+    position: relative;
+    pointer-events: all;
+    left: 40%;
+    width: 58%;
+    float: left;
+    margin-left: 30px;
+    /**/
+  }
+  /* line 83, entries.scss */
+  .works-entry .entry-content, .header-entry .entry-content {
+    margin-top: 16pt;
+    /* $h1-font-size; */
+  }
+  /* line 87, entries.scss */
+  .works-entry .left-column, .header-entry .left-column {
+    width: 38%;
+    position: absolute;
+    right: 60%;
+    top: 0;
+    height: 100%;
+  }
+}
+
+/* line 96, entries.scss */
+.header-entry {
+  /* 
+   * This will make a pencil line on the far right side of the left column for the header entry
+   */
+  /**/
+}
+/* line 101, entries.scss */
+.header-entry .left-column:after {
+  content: '';
+  z-index: 10;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: url(img/pencil_vertical_repeat_small2.jpg) 393px;
+  background-repeat-x: no-repeat;
+}
+/* line 114, entries.scss */
+.header-entry:after {
+  content: '';
+  position: absolute;
+  left: 80px;
+  bottom: -60px;
+  right: 80px;
+  height: 80px;
+  z-index: -10;
+  background: url(img/pencil_horizontal_repeat_small2.jpg) bottom;
+  background-repeat-y: no-repeat;
+  transiton: all 1s slide;
+}
+/* line 127, entries.scss */
+.header-entry .entry-header {
+  margin-top: 80px;
+}
+/* line 131, entries.scss */
+.header-entry .entry-content h2 {
+  margin-top: 40px;
+  margin-bottom: 2px;
+}
+/* line 135, entries.scss */
+.header-entry .entry-content h3 {
+  margin-top: 8px;
+}
+/* line 137, entries.scss */
+.header-entry .entry-content h3 a {
+  text-decoration: none;
+  background: url(img/pencil_horizontal_repeat_small2.jpg) bottom;
+  background-repeat-y: no-repeat;
+  padding-bottom: 6px;
+}
+
+/* line 29, hex.scss */
 .hex {
   pointer-events: all;
   -webkit-transition: background-image 100ms ease-in-out;
@@ -529,11 +629,11 @@ header, section {
   transition: background-image 100ms ease-in-out;
   display: inline-block;
 }
-/* line 44, hex.scss */
+/* line 34, hex.scss */
 .hex.bgcolor, .hex.bgcolor:before, .hex.bgcolor:after {
   background-color: #9e9e9e;
 }
-/* line 48, hex.scss */
+/* line 38, hex.scss */
 .hex:before, .hex:after {
   position: absolute;
   width: inherit;
@@ -542,17 +642,17 @@ header, section {
   background: inherit;
   content: '';
 }
-/* line 56, hex.scss */
+/* line 46, hex.scss */
 .hex:before {
   transform: rotate(60deg);
 }
-/* line 59, hex.scss */
+/* line 49, hex.scss */
 .hex:after {
   transform: rotate(-60deg);
   left: 0;
   top: 0;
 }
-/* line 66, hex.scss */
+/* line 56, hex.scss */
 .hex.small {
   height: 41.76864px;
   width: 72.34329px;
@@ -564,12 +664,12 @@ header, section {
   margin-left: 0px;
   z-index: 0;
 }
-/* line 75, hex.scss */
+/* line 65, hex.scss */
 .hex.small:hover {
   background: #F8baba;
   cursor: pointer;
 }
-/* line 80, hex.scss */
+/* line 70, hex.scss */
 .hex.small div {
   width: 72.34329px;
   height: 200%;
@@ -584,7 +684,7 @@ header, section {
   -moz-transition: background-image 500ms ease-in-out;
   transition: background-image 500ms ease-in-out;
 }
-/* line 94, hex.scss */
+/* line 84, hex.scss */
 .hex.medium {
   height: 111.10436px;
   width: 192.43275px;
@@ -594,7 +694,7 @@ header, section {
   transform: translate(-50%, 0);
   z-index: 1;
 }
-/* line 101, hex.scss */
+/* line 91, hex.scss */
 .hex.medium img {
   width: 192.43275px;
   position: relative;
@@ -604,26 +704,26 @@ header, section {
   -moz-transition: all 300ms cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 300ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-/* line 108, hex.scss */
+/* line 98, hex.scss */
 .hex.medium.northHex {
   top: 55.55218px;
 }
-/* line 111, hex.scss */
+/* line 101, hex.scss */
 .hex.medium.southHex {
   top: 63.59079px;
   transform: translate(-50%, 300%);
 }
-/* line 115, hex.scss */
+/* line 105, hex.scss */
 .hex.medium.eastHex {
   top: 59.57149px;
   transform: translate(-101.3%, 150%);
 }
-/* line 119, hex.scss */
+/* line 109, hex.scss */
 .hex.medium.westHex {
   top: 59.57149px;
   transform: translate(1%, 150%);
 }
-/* line 125, hex.scss */
+/* line 115, hex.scss */
 .hex.large {
   height: 133.32523px;
   width: 230.9193px;
@@ -634,32 +734,32 @@ header, section {
   z-index: 1;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-/* line 133, hex.scss */
+/* line 123, hex.scss */
 .hex.large img {
   width: 230.9193px;
   position: relative;
   top: -63.82591px;
   pointer-events: none;
 }
-/* line 140, hex.scss */
+/* line 130, hex.scss */
 .hex.large.northHex {
   top: 177.10352px;
 }
-/* line 143, hex.scss */
+/* line 133, hex.scss */
 .hex.large.southHex {
   top: 583.07921px;
 }
-/* line 146, hex.scss */
+/* line 136, hex.scss */
 .hex.large.eastHex {
   top: 380.09137px;
   transform: translate(1%, 0);
 }
-/* line 150, hex.scss */
+/* line 140, hex.scss */
 .hex.large.westHex {
   top: 380.09137px;
   transform: translate(-101.3%, 0);
 }
-/* line 154, hex.scss */
+/* line 144, hex.scss */
 .hex.large.freeHex {
   position: relative;
   left: auto;
@@ -668,7 +768,7 @@ header, section {
   margin: 133.32523px 80px 106.66018px 80px;
 }
 
-/* line 166, hex.scss */
+/* line 156, hex.scss */
 .container {
   width: 1024px;
   line-height: 1.0;
@@ -678,7 +778,7 @@ header, section {
   margin-right: auto;
 }
 
-/* line 175, hex.scss */
+/* line 165, hex.scss */
 .hexGrid {
   position: absolute;
   top: 0px;
@@ -687,51 +787,51 @@ header, section {
   padding-top: 22.89397px;
 }
 
-/* line 183, hex.scss */
+/* line 173, hex.scss */
 .over480 {
   display: none;
 }
 
 @media screen and (min-width: 480px) {
-  /* line 187, hex.scss */
+  /* line 177, hex.scss */
   .over480 {
     display: inherit;
   }
 }
-/* line 192, hex.scss */
+/* line 182, hex.scss */
 .visible {
   display: inherit;
   opacity: 1;
 }
 
-/* line 197, hex.scss */
+/* line 187, hex.scss */
 .invisible {
   display: hidden;
   height: 0px;
 }
 
-/* line 201, hex.scss */
+/* line 191, hex.scss */
 .opacityZ {
   opacity: 0;
   position: absolute;
   top: 0;
 }
 
-/* line 206, hex.scss */
+/* line 196, hex.scss */
 .opacityA {
   opacity: 1;
   position: absolute;
   top: 0;
 }
 
-/* line 211, hex.scss */
+/* line 201, hex.scss */
 .gone {
   opacity: 0 !important;
   height: 0 !important;
   /*width: 0!important;*/
 }
 
-/* line 217, hex.scss */
+/* line 207, hex.scss */
 ol {
   pointer-events: none;
   -webkit-margin-before: 0px;
@@ -739,13 +839,13 @@ ol {
   -webkit-margin-after: 0px;
 }
 
-/* line 224, hex.scss */
+/* line 214, hex.scss */
 ol.even {
   position: relative;
   left: 39.65236px;
 }
 
-/* line 229, hex.scss */
+/* line 219, hex.scss */
 ol.odd {
   position: relative;
   left: 0px;
@@ -753,7 +853,12 @@ ol.odd {
   margin-bottom: 22.89397px;
 }
 
-/* line 236, hex.scss */
+/* line 226, hex.scss */
 ol {
   white-space: nowrap;
+}
+
+/* line 229, hex.scss */
+#hex-float {
+  min-height: 399.97569px;
 }

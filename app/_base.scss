@@ -9,6 +9,8 @@ Perfection:     #8A6A6A
 Cream Vintage   #C99E89
 */
 $h1-font-size: 24pt;
+$h2-font-size: 18pt;
+
 $container-width: 1024px;
 $hex-size: $container-width / (24.516);/*($container-width / 13) * (6 / 10.2) * (14/15); //41px;*/
 $hex-gutter: $hex-size / 6;
@@ -53,8 +55,8 @@ $container-left: 0px;
   bottom: $dist;
   left: $dist;
   right: $dist;
-}
-@mixin bottomRightShadow(){
+
+}@mixin bottomRightShadow(){
   -webkit-box-shadow: 3px 0 8px -6px rgba(0,0,0,0.8);
    -moz-box-shadow: 3px 0 8px -6px rgba(0,0,0,0.8);
         box-shadow: 3px 0 8px -6px rgba(0,0,0,0.8);
@@ -93,9 +95,58 @@ h1 {
   font-weight: bold;
   color: darken(#4B5B6E, 0%); /*lighten(#400A19, 5%); /*darken(#8A6A6A, 10%);/* #4B5B6E;/**/
 }
-h2 {
+h2, h3 {
   font-weight:100;
-  font-size: 18pt;
+  font-size: $h2-font-size;
   font-family: 'Quicksand', sans-serif;
   color: #4B5B6E;
 }
+h3 {
+  font-size: $h2-font-size - 2;
+}
+
+.centered-content {
+  margin: 0 auto;
+  height: auto;
+  /*margin-top: 80px;*/
+  margin-bottom: 80px;
+  /*overflow: hidden;*/
+}
+
+@media screen and (min-width: 480px){
+  .centered-content {
+      max-width: 1180px;
+      margin-top: 80px;
+      margin-bottom: 80px;
+      margin: 80px auto;
+      
+  }
+}
+.fade {
+  /*opacity: 0;*/
+  transition: all 120ms ease-in;
+}
+.second-fade, 
+.pseudo-fade:before, 
+.pseudo-fade:after {
+  transition: all 300ms ease-in;
+}
+
+.slow-fade.pseudo-fade:before, 
+.slow-fade.pseudo-fade:after {
+  transition: all 1000ms ease-in;
+}
+
+.view-container.ng-enter .fade, 
+.view-container.ng-enter .second-fade,
+.view-container.ng-enter .pseudo-fade:before,
+.view-container.ng-enter .pseudo-fade::after{
+  opacity: 0;
+}
+.view-container.ng-enter-active .fade, 
+.view-container.ng-enter-active .second-fade,
+.view-container.ng-enter-active .pseudo-fade:before, 
+.view-container.ng-enter-active .pseudo-fade::after{
+  opacity: 1;
+}
+ 

@@ -18,15 +18,10 @@
 	top: 0;
 	right: 0;
 	left: 0;
+	margin-bottom: 80px;
 }
 /********************* Lower Container **********************/
-#lower-container {
-	margin: 0 auto;
-	height: auto;
-	/*margin-top: 80px;*/
-	margin-bottom: 80px;
-	overflow: hidden;
-}
+
 .side-content {
 	width: 30%;
 	display: inline-block;
@@ -101,15 +96,9 @@
 		
 		margin: 80px auto 40px auto;
 	}
-	#hex-float {
+	/*#hex-float {
 		height: 300px;
-	}
-	#lower-container {
-		max-width: 1180px;
-		margin-top: 80px;
-		margin-bottom: 80px;
-		overflow: hidden;
-	}
+	}*/
 }
 /*************** Animations *************/
 .flip-it {
