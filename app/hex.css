@@ -486,46 +486,53 @@ header, section {
     -ms-transform: rotate(1deg);
     transform: rotate(1deg);
   }
-  /* line 25, entries.scss */
-  .works-entry .left-column .hex, .works-entry .left-column .highlights {
-    margin: 0 0 0 60px;
-  }
-  /* line 28, entries.scss */
+  /* line 26, entries.scss */
   .works-entry .left-column:after {
     border-radius: 10px;
   }
 }
 
-/* line 35, entries.scss */
+/* line 33, entries.scss */
 .works-entry, .header-entry {
   width: 100%;
-  margin: 40px;
+  margin: 40px 0;
   height: auto;
   position: relative;
   display: inline-block;
-  padding: 0 80px;
   max-width: 100%;
 }
-/* line 45, entries.scss */
-.works-entry .entry-header, .header-entry .entry-header {
-  text-align: left;
-  margin-top: 234.65046px;
+/* line 42, entries.scss */
+.works-entry img, .header-entry img {
+  padding: 0;
+  margin: 40 auto;
+  clear: both;
+  width: 100%;
 }
 /* line 48, entries.scss */
+.works-entry .entry-header, .header-entry .entry-header {
+  text-align: left;
+  margin-top: 262.65046px;
+  /*- $h1-font-size;*/
+}
+/* line 51, entries.scss */
 .works-entry .entry-header h1, .header-entry .entry-header h1 {
   margin: 0;
 }
-/* line 52, entries.scss */
+/* line 55, entries.scss */
 .works-entry .left-column, .header-entry .left-column {
   float: left;
   max-width: 400px;
   left: 40px;
 }
-/* line 58, entries.scss */
+/* line 61, entries.scss */
+.works-entry .entry-content img:nth-child(1), .header-entry .entry-content img:nth-child(1) {
+  margin-top: 30px;
+}
+/* line 64, entries.scss */
 .works-entry .entry-content a, .header-entry .entry-content a {
   color: #8A6A6A;
 }
-/* line 61, entries.scss */
+/* line 67, entries.scss */
 .works-entry .entry-content .site-link, .header-entry .entry-content .site-link {
   font-size: 14pt;
   float: right;
@@ -533,48 +540,69 @@ header, section {
   letter-spacing: 2px;
   margin-right: 40px;
 }
-/* line 70, entries.scss */
+/* line 76, entries.scss */
 .works-entry .highlights, .header-entry .highlights {
   line-height: 30pt;
 }
-@media screen and (min-width: 960px) {
-  /* line 35, entries.scss */
-  .works-entry, .header-entry {
-    max-width: 1020px;
+@media screen and (max-width: 1110px) {
+  /* line 80, entries.scss */
+  .works-entry .entry-header, .works-entry .entry-content, .header-entry .entry-header, .header-entry .entry-content {
+    width: 56%;
+    left: 40%;
   }
-  /* line 75, entries.scss */
+  /* line 84, entries.scss */
+  .works-entry .left-column, .header-entry .left-column {
+    width: 38%;
+    right: 60%;
+  }
+}
+@media screen and (min-width: 960px) {
+  /* line 33, entries.scss */
+  .works-entry, .header-entry {
+    /*max-width: 1020px;*/
+    width: 100%;
+  }
+  /* line 92, entries.scss */
   .works-entry .entry-header, .works-entry .entry-content, .header-entry .entry-header, .header-entry .entry-content {
     position: relative;
     pointer-events: all;
-    left: 40%;
-    width: 58%;
+    left: 44%;
+    width: 46%;
     float: left;
-    margin-left: 30px;
-    /**/
+    /*margin-left: 30px;/**/
+    max-width: 550px;
   }
-  /* line 83, entries.scss */
+  /* line 101, entries.scss */
   .works-entry .entry-content, .header-entry .entry-content {
     margin-top: 16pt;
     /* $h1-font-size; */
   }
-  /* line 87, entries.scss */
+  /* line 105, entries.scss */
   .works-entry .left-column, .header-entry .left-column {
-    width: 38%;
+    width: 34%;
     position: absolute;
-    right: 60%;
+    right: 64%;
     top: 0;
     height: 100%;
+    text-align: center;
+  }
+  /* line 113, entries.scss */
+  .works-entry .highlights, .header-entry .highlights {
+    position: static;
+    display: inline-block;
+    margin: 40px auto 40px auto;
+    text-align: left;
   }
 }
 
-/* line 96, entries.scss */
+/* line 121, entries.scss */
 .header-entry {
   /* 
    * This will make a pencil line on the far right side of the left column for the header entry
    */
   /**/
 }
-/* line 101, entries.scss */
+/* line 126, entries.scss */
 .header-entry .left-column:after {
   content: '';
   z-index: 10;
@@ -582,12 +610,13 @@ header, section {
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0;
   left: 0;
-  background: url(img/pencil_vertical_repeat_small2.jpg) 393px;
+  right: 0;
+  right: -40px;
+  background: url(img/pencil_vertical_repeat_small2.jpg) right;
   background-repeat-x: no-repeat;
 }
-/* line 114, entries.scss */
+/* line 138, entries.scss */
 .header-entry:after {
   content: '';
   position: absolute;
@@ -600,20 +629,20 @@ header, section {
   background-repeat-y: no-repeat;
   transiton: all 1s slide;
 }
-/* line 127, entries.scss */
+/* line 151, entries.scss */
 .header-entry .entry-header {
   margin-top: 80px;
 }
-/* line 131, entries.scss */
+/* line 155, entries.scss */
 .header-entry .entry-content h2 {
   margin-top: 40px;
   margin-bottom: 2px;
 }
-/* line 135, entries.scss */
+/* line 159, entries.scss */
 .header-entry .entry-content h3 {
   margin-top: 8px;
 }
-/* line 137, entries.scss */
+/* line 161, entries.scss */
 .header-entry .entry-content h3 a {
   text-decoration: none;
   background: url(img/pencil_horizontal_repeat_small2.jpg) bottom;
@@ -765,10 +794,24 @@ header, section {
   left: auto;
   transform: none;
   float: left;
-  margin: 133.32523px 80px 106.66018px 80px;
+}
+@media screen and (min-width: 1110px) {
+  /* line 144, hex.scss */
+  .hex.large.freeHex {
+    margin: 133.32523px 80px 106.66018px 80px;
+  }
+}
+@media screen and (min-width: 960px) {
+  /* line 144, hex.scss */
+  .hex.large.freeHex {
+    margin: 133.32523px auto 106.66018px auto;
+    float: none;
+    position: static;
+    display: block;
+  }
 }
 
-/* line 156, hex.scss */
+/* line 164, hex.scss */
 .container {
   width: 1024px;
   line-height: 1.0;
@@ -778,7 +821,7 @@ header, section {
   margin-right: auto;
 }
 
-/* line 165, hex.scss */
+/* line 173, hex.scss */
 .hexGrid {
   position: absolute;
   top: 0px;
@@ -787,51 +830,51 @@ header, section {
   padding-top: 22.89397px;
 }
 
-/* line 173, hex.scss */
+/* line 181, hex.scss */
 .over480 {
   display: none;
 }
 
 @media screen and (min-width: 480px) {
-  /* line 177, hex.scss */
+  /* line 185, hex.scss */
   .over480 {
     display: inherit;
   }
 }
-/* line 182, hex.scss */
+/* line 190, hex.scss */
 .visible {
   display: inherit;
   opacity: 1;
 }
 
-/* line 187, hex.scss */
+/* line 195, hex.scss */
 .invisible {
   display: hidden;
   height: 0px;
 }
 
-/* line 191, hex.scss */
+/* line 199, hex.scss */
 .opacityZ {
   opacity: 0;
   position: absolute;
   top: 0;
 }
 
-/* line 196, hex.scss */
+/* line 204, hex.scss */
 .opacityA {
   opacity: 1;
   position: absolute;
   top: 0;
 }
 
-/* line 201, hex.scss */
+/* line 209, hex.scss */
 .gone {
   opacity: 0 !important;
   height: 0 !important;
   /*width: 0!important;*/
 }
 
-/* line 207, hex.scss */
+/* line 215, hex.scss */
 ol {
   pointer-events: none;
   -webkit-margin-before: 0px;
@@ -839,13 +882,13 @@ ol {
   -webkit-margin-after: 0px;
 }
 
-/* line 214, hex.scss */
+/* line 222, hex.scss */
 ol.even {
   position: relative;
   left: 39.65236px;
 }
 
-/* line 219, hex.scss */
+/* line 227, hex.scss */
 ol.odd {
   position: relative;
   left: 0px;
@@ -853,12 +896,12 @@ ol.odd {
   margin-bottom: 22.89397px;
 }
 
-/* line 226, hex.scss */
+/* line 234, hex.scss */
 ol {
   white-space: nowrap;
 }
 
-/* line 229, hex.scss */
+/* line 237, hex.scss */
 #hex-float {
   min-height: 399.97569px;
 }
