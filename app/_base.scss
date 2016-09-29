@@ -17,8 +17,8 @@ $hex-gutter: $hex-size / 6;
 $gutter-height: $hex-gutter / 1.732;
 /*$small-hex-margin: ($hex-size * (1.732)) / (1.732 * 2) + ($hex-gutter);*/
 $row-margin: ($hex-size + $gutter-height ) / 2; /*1 * ($hex-size / 2 * 1.732) + ($hex-gutter / 4 * 1.732) - 1px;*/
-$large-hex-size: 2 * $hex-size + 2 * $row-margin + 4;
-$medium-hex-size: $large-hex-size / (1.2);
+$large-hex-size: 2 * $hex-size + 2 * $row-margin ;
+$medium-hex-size: $large-hex-size / (1.5);
 $container-left: 0px;
 
 

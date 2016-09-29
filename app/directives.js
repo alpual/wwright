@@ -6,7 +6,7 @@
         return {
 	        restrict: 'E', //E = element, A = attribute, C = class, M = comment         
 	        /*templateUrl: 'hex.html',*/
-	        template: function(tElement, tAttrs) {
+	        template: function(scope, tElement, tAttrs) {
     			var s = "";
     			s += '<li>';
     			s += '<div  style="background-image: none"></div>';

@@ -6,6 +6,7 @@ var app = angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.works',
+  'myApp.contact',
   'myApp.pageslide',
   'myApp.tilehex',
   'myApp.version',
